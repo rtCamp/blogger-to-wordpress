@@ -1,0 +1,7 @@
+#btowp_img{margin:18px 8px 0 0;float:left;vertical-align:bottom;display:inline-block}
+#btowp_title{float:left;display:inline-block}
+#content_block{width:62%}
+#ads_block{width:30%} #ads_block > div {width:80%}
+.inside {font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;line-height:1.2}
+.inside span{font-style:italic;font-weight:bold}
+.align_left{float:left} #error_msg{color:#c00}
