@@ -1,11 +1,11 @@
 === Plugin Name ===
-Contributors: rtCamp, rahul286, rakshit 
+Contributors: rtcamp, rahul286, rakshit 
 Donate link: http://bloggertowp.org/donate
 Plugin Name: Blogger To WordPress Redirection Plugin
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
-Requires at least: 2.0.2
-Tested up to: 3.3.1
-Stable tag: 2.0.5
+Requires at least: 3.2
+Tested up to: 3.4.1
+Stable tag: 2.0.6
 
 This plugin automates setting up 1-to-1 mapping between Blogger.com (blogspot) blog posts and your new WordPress blog posts. 
 
