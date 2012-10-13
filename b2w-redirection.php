@@ -1,11 +1,13 @@
 <?php
 /*
 Plugin Name: Blogger To Wordpress Redirection
-Plugin URI: http://bloggertowp.org/blogger-to-wordpress-redirection-plugin/
+Plugin URI: http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/
 Description: This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address (e.g. xyz.blogspot.com) which are moved to new custom domain (e.g. xyz.com)
-Version: 2.0.6
+Version: 3.0
 Author: rtCamp
-Author URI: http://bloggertowp.org
+Author URI: http://rtcamp.com/
+Requires at least: 3.0
+Tested up to: 3.4.2
 */
 
 define('RT_B2WR_PLUGIN_URL', WP_PLUGIN_URL .'/'. basename(dirname(__FILE__)));
@@ -52,9 +54,9 @@ function rt_Blogger_to_Wordpress_Administrative_Page() {
                         <div title="Click to toggle" class="handlediv"><br></div>
                         <h3 class="hndle"><span><strong>Getting Social is Good</strong></span></h3>
                         <div class="inside" style="text-align:center;">
-                            <a href="http://www.facebook.com/BloggertoWordpress" target="_blank" title="Become a fan on Facebook"><img src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/facebook.png" alt="Twitter" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="http://twitter.com/bloggertowp" target="_blank" title="Follow us on Twitter"><img src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/twitter.png" alt="Facebook" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="http://feeds.feedburner.com/Blogger-to-Wordpress" target="_blank" title="Subscribe to our feeds"><img src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/rss.png" alt="RSS Feeds" /></a>
+                            <a href="http://www.facebook.com/rtCamp.solutions" target="_blank" title="Become a fan on Facebook"><img src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/facebook.png" alt="Twitter" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://twitter.com/rtcamp" target="_blank" title="Follow us on Twitter"><img src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/twitter.png" alt="Facebook" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://feeds.feedburner.com/rtcamp" target="_blank" title="Subscribe to our feeds"><img src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/rss.png" alt="RSS Feeds" /></a>
                         </div>
                     </div>
 
@@ -62,7 +64,7 @@ function rt_Blogger_to_Wordpress_Administrative_Page() {
                         <div title="Click to toggle" class="handlediv"><br></div>
                         <h3 class="hndle"><span><strong>Join Us on Facebook</strong></span></h3>
                         <div class="inside" style="text-align:center;">
-                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FBloggertoWordpress&amp;width=242&amp;height=182&amp;connections=4&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:242px; height:182px"></iframe> 
+                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FrtCamp.solutions&amp;width=242&amp;height=182&amp;connections=4&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:242px; height:182px"></iframe> 
                         </div>
                     </div>
 
@@ -86,10 +88,10 @@ function rt_Blogger_to_Wordpress_Administrative_Page() {
                             </div>
                             <div class="rt-social-share" style="text-align:center; width: 127px; margin: 2px auto">
                                 <div class="rt-facebook" style="float:left; margin-right:5px;">	
-                                    <a style=" text-align:center;" name="fb_share" type="box_count" share_url="http://bloggertowp.org/blogger-to-wordpress-redirection-plugin/"></a>
+                                    <a style=" text-align:center;" name="fb_share" type="box_count" share_url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/"></a>
                                 </div>
                                 <div class="rt-twitter" style="">	
-                                    <a href="http://twitter.com/share"  class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="http://bloggertowp.org/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a> 
+                                    <a href="http://twitter.com/share"  class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a> 
                                     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
                                 </div>
                                 <div class="clear"></div>							
@@ -101,7 +103,7 @@ function rt_Blogger_to_Wordpress_Administrative_Page() {
                         <div title="Click to toggle" class="handlediv"><br></div>
                         <h3 class="hndle"><span><strong>Free Support</strong></span></h3>
                         <div class="inside">
-                            If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://bloggertowp.org/support/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.
+                            If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://rtcamp.com/support/forum/blogger-to-wordpress/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.
                         </div>
                     </div>
 
@@ -206,14 +208,14 @@ function rt_b2wr_verify_config() {
 	$local_link = '<a href = "'.$local_url.'" target = "_blank">'.$local_url.'</a> ';
 
 	echo '<h3><u>Test Case</u></h3><pre>Clicking this link &raquo; <b>'.$blogger_link.'</b><br/>Should redirect to &raquo; <b>'.$local_link.'</b></pre>';
-	die('<p><b>If you are stuck, you can use our <a href="http://forum.bloggertowp.org/" target="_blank">free support forum</a> or <a href="http://bloggertowp.org/contact/" target="_blank">hire us</a>.<br /><br />');
+	die('<p><b>If you are stuck, you can use our <a href="http://rtcamp.com/support/forum/blogger-to-wordpress/" target="_blank">free support forum</a> or <a href="http://rtcamp.com/contact/" target="_blank">hire us</a>.<br /><br />');
 }
 add_action('wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config');
 
 /* Get Latest Feeds - Begin */
 function rt_Get_Feeds_From_Blogger2WP() {
     include_once(ABSPATH . WPINC . '/feed.php');
-    $rss = fetch_feed('http://feeds.feedburner.com/Blogger-to-Wordpress');
+    $rss = fetch_feed('http://rtcamp.com/tag/blogger-to-wordpress/feed');
 
     if (!is_wp_error($rss)) {
         $maxitems = $rss->get_item_quantity(5);
@@ -238,7 +240,7 @@ function rt_Get_Feeds_From_Blogger2WP() {
 /* Update Notice - Begin */
 function rt_Blogger_to_Wordpress_Update_Notice() {
     if (!get_option('rtb2wr206') || get_option('rtb2wr206') == '') {
-        echo '<div id="b2wr_notice_block" class="error"><p>Blogger to WordPress Redirection plugin has been updated recently. Please <a href="' . get_admin_url() . 'tools.php?page=rt-blogger-to-wordpress-redirection">Run Configuration Wizard</a> to activate new redirection codes. <a class="blue_color" href="http://bloggertowp.org/new-update-to-blogger-wordpress-redirection-plugin/" target="_blank" title="Read more details about this update at Our Blog">(Read More…)</a><span><input type="button" id="hide_b2wr_notice_block" value="Hide this message!" class="button"></span></p></div>';
+        echo '<div id="b2wr_notice_block" class="error"><p>Due to recent updates on blogger.com, Blogger to WordPress Redirection plugin has been rewritten. The process has also changed completely. Please refer the updated instructions here: <a class="blue_color" href="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Read more details about this update at Our Blog">(Read More…)</a><span><input type="button" id="hide_b2wr_notice_block" value="Hide this message!" class="button"></span></p></div>';
     }
 }
 add_action('admin_notices', 'rt_Blogger_to_Wordpress_Update_Notice', 5);
