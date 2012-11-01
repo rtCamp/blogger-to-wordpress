@@ -1,4 +1,4 @@
-![alt text](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirectionassets/banner-772x250.jpeg)
+![alt text](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
 
 # Blogger To WordPress #
 
