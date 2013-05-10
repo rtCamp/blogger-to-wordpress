@@ -1,5 +1,5 @@
 === Blogger To WordPress ===
-Contributors: rtcamp, rahul286, rakshit, saurabhshukla
+Contributors: rtcamp, rahul286, rakshit, saurabhshukla, faishal
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
 Tested up to: 3.4.2
@@ -50,7 +50,8 @@ You can find [screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress
 == Changelog ==
 = 2.2 =
 
-* Fixed Mobile redirection.
+* Fixed redirection of mobile template url.
+* Add Warning to keep plugin active for redirection to work 
 
 = 2.1 =
 
