@@ -2,8 +2,8 @@
 Contributors: rtcamp, rahul286, rakshit, saurabhshukla, faishal
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 3.4.2
-Stable tag: 2.1
+Tested up to: 3.5.1
+Stable tag: 2.2
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: http://rtcamp.com/donate/

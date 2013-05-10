@@ -1,8 +1,8 @@
-![alt text](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
+![alt text](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection//assets/banner-772x250.jpg)
 
 # Blogger To WordPress #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [faishal] (http://profiles.wordpress.org/faishal),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -48,6 +48,11 @@ If your have any other question, [use our support forum](http://rtcamp.com/suppo
 You can find [screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/).
 
 ## Changelog ##
+#### 2.2 ####
+
+* Fixed redirection of mobile template url.
+* Add Warning to keep plugin active for redirection to work 
+
 #### 2.1 ####
 
 * Code rewritten to confirm to the latest templating system of Blogger. If you are using the old/classic templates, please upgrade to the new template system before using this plugin.
