@@ -48,6 +48,10 @@ If your have any other question, [use our support forum](http://rtcamp.com/suppo
 You can find [screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/).
 
 == Changelog ==
+= 2.2 =
+
+* Fixed Mobile redirection.
+
 = 2.1 =
 
 * Code rewritten to confirm to the latest templating system of Blogger. If you are using the old/classic templates, please upgrade to the new template system before using this plugin.
