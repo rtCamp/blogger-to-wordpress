@@ -171,6 +171,9 @@ function rt_Blogger_To_Wordpress_Redirection() {
                         if (strstr($b2w, $result->meta_value) !== false) {
 				$b2w_temp = explode($result->meta_value, $b2w);
 				$b2w = substr($b2w_temp[1], strpos($b2w_temp[1], '/'));
+                if(strpos($b2w,'?') > 0){
+                    $b2w = strstr($b2w,'?',true);
+                }
 			}
 
 			$sqlstr = "SELECT wposts.ID, wposts.guid

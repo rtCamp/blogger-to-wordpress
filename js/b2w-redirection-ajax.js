@@ -46,7 +46,7 @@ Name: B2W\n\
 </b:section>\n\
 <b:if cond=\'data:blog.pageType == &quot;item&quot;\'>\n\
 <script type="text/javascript">\n\
-window.location.replace(&quot;'+curr_domain+'/?b2w=&quot;+window.location);\n\
+window.location.replace(&quot;'+curr_domain+'/?b2w=&quot;+window.location.origin++window.location.pathname);\n\
 </script>\n\
 <b:else/>\n\
 <script type="text/javascript">\n\
@@ -63,7 +63,7 @@ window.location.replace(&quot;'+curr_domain+'&quot;+window.location.pathname);\n
 <p>Sorry for the inconvenience&hellip; </p>\n\
 Redirection provided by <a href="http://rtcamp.com/" title="Blogger to WordPress Migration Service">Blogger to WordPress Migration Service</a></div>\n\
 </body>\n\
-</html>\n\
+</html>\
 </textarea></p>\n\
 	After the redirection setup press <b>"Verify Configuration"</b> button below to test your configuration. <br />When you press the button it will generate a random link for a post on <b>'+ domain_name +'</b><div class="submit" style="padding-bottom: 0.5em !important"><input type="submit" class="button-primary" onclick = "check_configuration(\''+domain_name+'\')" name="start" id ="check_config" value="Verify Configuration"/><br /></div><div id ="verify_config"></div>');
 }
