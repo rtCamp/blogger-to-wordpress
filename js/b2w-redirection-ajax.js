@@ -46,7 +46,7 @@ Name: B2W\n\
 </b:section>\n\
 <b:if cond=\'data:blog.pageType == &quot;item&quot;\'>\n\
 <script type="text/javascript">\n\
-window.location.replace(&quot;'+curr_domain+'/?b2w=&quot;+window.location.origin+window.location.pathname);\n\
+window.location.replace(&quot;'+curr_domain+'/?b2w=&quot;+encodeURI(window.location.protocol + "//" + window.location.host+window.location.pathname));\n\
 </script>\n\
 <b:else/>\n\
 <script type="text/javascript">\n\
