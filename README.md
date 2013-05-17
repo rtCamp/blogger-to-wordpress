@@ -48,6 +48,11 @@ If your have any other question, [use our support forum](http://rtcamp.com/suppo
 You can find [screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/).
 
 ## Changelog ##
+
+#### 2.2.1 ####
+
+* Fixed redirection for Firefox and other browsers. 
+
 #### 2.2 ####
 
 * Fixed redirection of mobile template url.
@@ -69,7 +74,7 @@ New features added:
 
 * Supports rel####canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
-#### 2.1 ####
+#### 2.2.1 ####
 Code completely rewritten to confirm to updates in Blogger.
 Older code was not treated well by Blogger, for *some* blogs and they got deactivated for brief periods.
 Use this updated version for safest results!
