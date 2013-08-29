@@ -17,7 +17,7 @@ GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
-SVNURL="https://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on wordpress.org, with no trailing slash
+SVNURL="http://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on wordpress.org, with no trailing slash
 
 # Detect svn username based on url
 SVNUSER=$(cat ~/.subversion/auth/svn.simple/* | grep -A4 $(echo $SVNURL | awk -F// '{print $2}' | cut     -d'/' -f1) | tail -n1)
