@@ -1,5 +1,3 @@
-![alt text](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection//assets/banner-772x250.jpg)
-
 # Blogger To WordPress #
 
 * **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [faishal] (http://profiles.wordpress.org/faishal),
