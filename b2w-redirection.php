@@ -177,11 +177,11 @@ function rt_Blogger_To_Wordpress_Redirection() {
                 }
 			}
 
-			$sqlstr = "SELECT wposts.ID, wposts.guid
+			$sqlstr = $wpdb->prepare("SELECT wposts.ID, wposts.guid
 				  FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta
 				  WHERE wposts.ID = wpostmeta.post_id
 				  AND wpostmeta.meta_key = 'blogger_permalink'
-				  AND wpostmeta.meta_value = '".$b2w."'";
+				  AND wpostmeta.meta_value = %s", $b2w);
 			$wpurl = $wpdb->get_results($sqlstr, ARRAY_N);
 			if ($wpurl){
 				header( 'Location: '.get_permalink($wpurl[0][0]).' ') ;
@@ -199,11 +199,11 @@ add_action('init','rt_Blogger_To_Wordpress_Redirection');
 function rt_b2wr_verify_config() {
 	global $wpdb;
 	$domain_name = $_POST['dname'];
-	$sql = "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'blogger_blog' AND meta_value = '{$domain_name}' ORDER BY rand() LIMIT 1";
+	$sql = $wpdb->prepare("SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'blogger_blog' AND meta_value = %s ORDER BY rand() LIMIT 1",$domain_name);
 
 	$rand_col = $wpdb->get_results($sql);
 	$rand_post_id = $rand_col[0]->post_id;
-	$sql1 = "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE post_id = {$rand_post_id} AND meta_key = 'blogger_permalink' ORDER BY rand() LIMIT 1";
+	$sql1 = $wpdb->prepare("SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'blogger_permalink' ORDER BY rand() LIMIT 1",$rand_post_id);
 	$rand_col2 = $wpdb->get_results($sql1);
 
 	$blogger_url = 'http://'.$domain_name.$rand_col2[0]->meta_value;
