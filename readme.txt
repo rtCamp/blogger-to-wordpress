@@ -2,8 +2,8 @@
 Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 3.6
-Stable tag: 2.2.2
+Tested up to: 3.8
+Stable tag: 2.2.3
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: http://rtcamp.com/donate/
@@ -30,6 +30,10 @@ You may also consider using our [Blogger To WordPress Migration Service](http://
 
 **Link - [Installation & Setup Guide](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/)**
  
+= Video Guide =
+
+https://www.youtube.com/watch?v=oinLz8-Wc4I
+
 == Installation ==
 
 You can find [detailed instructions to install & setup this plugin with screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/).
