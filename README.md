@@ -2,7 +2,7 @@
 
 # Blogger To WordPress #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [faishal] (http://profiles.wordpress.org/faishal),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [nitun.lanjewar] (http://profiles.wordpress.org/nitun.lanjewar), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [faishal] (http://profiles.wordpress.org/faishal),
 
 * **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -30,6 +30,10 @@ You may also consider using our [Blogger To WordPress Migration Service](http://
 
 **Link - [Installation & Setup Guide](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/)**
  
+#### Video Guide ####
+
+https://www.youtube.com/watch?v####oinLz8-Wc4I
+
 ## Installation ##
 
 You can find [detailed instructions to install & setup this plugin with screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/).
