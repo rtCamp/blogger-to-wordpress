@@ -50,7 +50,7 @@ window.location.replace(&quot;'+curr_domain+'/?b2w=&quot;+encodeURI(window.locat
 </script>\n\
 <b:else/>\n\
 <script type="text/javascript">\n\
-window.location.replace(&quot;'+curr_domain+'&quot;+window.location.pathname);\n\
+window.location.replace(&quot;'+curr_domain+'&quot;);\n\
 </script>\n\
 </b:if>\n\
 <div style=\'margin: 0 auto;text-align:center;\'> <h1>This Page</h1>\n\
