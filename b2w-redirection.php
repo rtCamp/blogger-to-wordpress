@@ -3,34 +3,35 @@
 Plugin Name: Blogger To Wordpress
 Plugin URI: http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/
 Description: This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address (e.g. xyz.blogspot.com) which are moved to new custom domain (e.g. xyz.com)
-Version: 2.2.3
+Version: 2.2.4
 Author: rtCamp
 Author URI: http://rtcamp.com/
 Requires at least: 3.2
-Tested up to: 3.8
+Tested up to: 4.0
 */
 
-define('RT_B2WR_PLUGIN_URL', WP_PLUGIN_URL .'/'. basename(dirname(__FILE__)));
+define( 'RT_B2WR_PLUGIN_URL', WP_PLUGIN_URL . '/' . basename( dirname( __FILE__ ) ) );
 
 /* Add option to Tools Menu */
 function rt_Blogger_to_Wordpress_add_option() {
-    add_management_page('Blogger To Wordpress Redirection', 'Blogger To WordPress Redirection', 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_Blogger_to_Wordpress_Administrative_Page');
+	add_management_page( 'Blogger To Wordpress Redirection', 'Blogger To WordPress Redirection', 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_Blogger_to_Wordpress_Administrative_Page' );
 
-    wp_enqueue_script('rt-blogger-to-wordpress-redirection-js', (RT_B2WR_PLUGIN_URL . '/js/b2w-redirection-ajax.js'), array('jquery', 'postbox'), '', true);
-    wp_enqueue_script('rt-fb-share', ('http://static.ak.fbcdn.net/connect.php/js/FB.Share'), '', '', true);
+	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', (RT_B2WR_PLUGIN_URL . '/js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), '', true );
+	wp_enqueue_script( 'rt-fb-share', ('http://static.ak.fbcdn.net/connect.php/js/FB.Share' ), '', '', true );
 
-    wp_enqueue_style('rt-blogger-to-wordpress-redirection-css', (RT_B2WR_PLUGIN_URL . '/css/b2w-redirection.css'));
+	wp_enqueue_style( 'rt-blogger-to-wordpress-redirection-css', (RT_B2WR_PLUGIN_URL . '/css/b2w-redirection.css' ) );
 
-    if (isset($_GET['page']) && $_GET['page'] == 'rt-blogger-to-wordpress-redirection') {
-        wp_enqueue_script('dashboard');
-        wp_enqueue_style('dashboard');
-    }
+	if ( isset( $_GET['page'] ) && $_GET['page'] == 'rt-blogger-to-wordpress-redirection' ) {
+		wp_enqueue_script( 'dashboard' );
+		wp_enqueue_style( 'dashboard' );
+	}
+
 }
-add_action('admin_menu', 'rt_Blogger_to_Wordpress_add_option');
+
+add_action( 'admin_menu', 'rt_Blogger_to_Wordpress_add_option' );
 
 /* Administrative Page - Begin */
-function rt_Blogger_to_Wordpress_Administrative_Page() {
-    ?>
+function rt_Blogger_to_Wordpress_Administrative_Page() { ?>
     <div class="wrap">
         <div>
             <img id="btowp_img" alt="B2W-Redirection" src="<?php echo RT_B2WR_PLUGIN_URL; ?>/images/btowp_img.png" />
@@ -160,97 +161,103 @@ add_action('wp_ajax_rt_b2wr_get_config', 'rt_b2wr_get_config');
 
 /* Redirection Function (!important) */
 function rt_Blogger_To_Wordpress_Redirection() {
-	$b2w = (isset($_GET['b2w']))?$_GET['b2w']:false;
+	$b2w = ( isset( $_GET['b2w'] ) ) ? $_GET['b2w'] : false;
 
-	if ($b2w) {
+	if ( $b2w ) {
 		global $wpdb;
 		$sql = "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} where meta_key = 'blogger_blog'";
-		$results = $wpdb->get_results($sql);
+		$results = $wpdb->get_results( $sql );
 
-		foreach ($results as $result){
-			$result->meta_value = substr($result->meta_value, 0, strrpos($result->meta_value,'.'));
-                        if (strstr($b2w, $result->meta_value) !== false) {
-				$b2w_temp = explode($result->meta_value, $b2w);
-				$b2w = substr($b2w_temp[1], strpos($b2w_temp[1], '/'));
-                if(strpos($b2w,'?') > 0){
-                    $b2w = strstr($b2w,'?',true);
-                }
+		foreach ( $results as $result ) {
+			$result->meta_value = substr( $result->meta_value, 0, strrpos( $result->meta_value, '.' ) );
+			if ( strstr( $b2w, $result->meta_value ) !== false ) {
+				$b2w_temp = explode( $result->meta_value, $b2w );
+				$b2w = substr( $b2w_temp[1], strpos( $b2w_temp[1], '/' ) );
+				if ( strpos( $b2w, '?' ) > 0 ) {
+					$b2w = strstr( $b2w, '?', true );
+				}
 			}
 
-			$sqlstr = $wpdb->prepare("SELECT wposts.ID, wposts.guid
+			$sqlstr = $wpdb->prepare( "SELECT wposts.ID, wposts.guid
 				  FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta
 				  WHERE wposts.ID = wpostmeta.post_id
 				  AND wpostmeta.meta_key = 'blogger_permalink'
-				  AND wpostmeta.meta_value = %s", $b2w);
-			$wpurl = $wpdb->get_results($sqlstr, ARRAY_N);
-			if ($wpurl){
-				header( 'Location: '.get_permalink($wpurl[0][0]).' ') ;
+				  AND wpostmeta.meta_value = %s", $b2w );
+			$wpurl = $wpdb->get_results( $sqlstr, ARRAY_N );
+			if ( $wpurl ) {
+				header( 'Location: ' . get_permalink( $wpurl[0][0] ) . ' ' );
 				die();
 			} else {
-                            header("Status: 301 Moved Permanently");
-                            header("Location:".home_url());
-                        }
+				header( "Status: 301 Moved Permanently" );
+				header( "Location:" . home_url() );
+			}
 		}
 	}
+
 }
-add_action('init','rt_Blogger_To_Wordpress_Redirection');
+
+add_action( 'init', 'rt_Blogger_To_Wordpress_Redirection' );
 
 /* Verify Configuration */
 function rt_b2wr_verify_config() {
 	global $wpdb;
 	$domain_name = $_POST['dname'];
-	$sql = $wpdb->prepare("SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'blogger_blog' AND meta_value = %s ORDER BY rand() LIMIT 1",$domain_name);
+	$sql = $wpdb->prepare( "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'blogger_blog' AND meta_value = %s ORDER BY rand() LIMIT 1", $domain_name );
 
-	$rand_col = $wpdb->get_results($sql);
+	$rand_col = $wpdb->get_results( $sql );
 	$rand_post_id = $rand_col[0]->post_id;
-	$sql1 = $wpdb->prepare("SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'blogger_permalink' ORDER BY rand() LIMIT 1",$rand_post_id);
-	$rand_col2 = $wpdb->get_results($sql1);
+	$sql1 = $wpdb->prepare( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'blogger_permalink' ORDER BY rand() LIMIT 1", $rand_post_id );
+	$rand_col2 = $wpdb->get_results( $sql1 );
 
-	$blogger_url = 'http://'.$domain_name.$rand_col2[0]->meta_value;
-	$blogger_link = '<a href = "'.$blogger_url.'" target = "_blank">'.$blogger_url.'</a> ';
-	$local_url = get_permalink($rand_post_id);
-	$local_link = '<a href = "'.$local_url.'" target = "_blank">'.$local_url.'</a> ';
+	$blogger_url = 'http://' . $domain_name . $rand_col2[0]->meta_value;
+	$blogger_link = '<a href = "' . $blogger_url . '" target = "_blank">' . $blogger_url . '</a> ';
+	$local_url = get_permalink( $rand_post_id );
+	$local_link = '<a href = "' . $local_url . '" target = "_blank">' . $local_url . '</a> ';
 
-	echo '<h3><u>Test Case</u></h3><pre>Clicking this link &raquo; <b>'.$blogger_link.'</b><br/>Should redirect to &raquo; <b>'.$local_link.'</b></pre>';
-	die('<p><b>If you are stuck, you can use our <a href="http://rtcamp.com/support/forum/blogger-to-wordpress/" target="_blank">free support forum</a> or <a href="http://rtcamp.com/contact/" target="_blank">hire us</a>.<br /><br />');
+	echo '<h3><u>Test Case</u></h3><pre>Clicking this link &raquo; <b>' . $blogger_link . '</b><br/>Should redirect to &raquo; <b>' . $local_link . '</b></pre>';
+	die( '<p><b>If you are stuck, you can use our <a href="http://rtcamp.com/support/forum/blogger-to-wordpress/" target="_blank">free support forum</a> or <a href="http://rtcamp.com/contact/" target="_blank">hire us</a>.<br /><br />' );
+
 }
-add_action('wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config');
+
+add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
 
 /* Get Latest Feeds - Begin */
 function rt_Get_Feeds_From_Blogger2WP() {
-    include_once(ABSPATH . WPINC . '/feed.php');
-    $rss = fetch_feed('http://rtcamp.com/tag/blogger-to-wordpress/feed');
+	include_once( ABSPATH . WPINC . '/feed.php' );
 
-    if (!is_wp_error($rss)) {
-        $maxitems = $rss->get_item_quantity(5);
-        $rss_items = $rss->get_items(0, $maxitems);
-    }
-    ?>
-    <ul>
-    <?php
-    if ($maxitems == 0) {
-        echo '<li>No items.</li>';
-    } else {
-        foreach ($rss_items as $item) { ?>
-            <li>
-                <a href="<?php echo $item->get_permalink(); ?>" title="Posted <?php echo $item->get_date('j F Y | g:i a'); ?>"><?php echo $item->get_title(); ?></a>
-            </li><?php
-        }    
-    } ?>
-    </ul>
-    <?php
+	$rss = fetch_feed( 'http://rtcamp.com/tag/blogger-to-wordpress/feed' );
+
+	if ( ! is_wp_error( $rss ) ) {
+		$maxitems = $rss->get_item_quantity( 5 );
+		$rss_items = $rss->get_items( 0, $maxitems );
+	} ?>
+	<ul><?php
+		if ( $maxitems == 0 ) {
+			echo '<li>No items.</li>';
+		} else {
+			foreach ( $rss_items as $item ) { ?>
+				<li>
+					<a href="<?php echo $item->get_permalink(); ?>" title="Posted <?php echo $item->get_date( 'j F Y | g:i a' ); ?>"><?php echo $item->get_title(); ?></a>
+				</li><?php
+			}
+		} ?>
+	</ul>
+	<?php
+
 }
 
 /* Update Notice - Begin */
 function rt_Blogger_to_Wordpress_Update_Notice() {
-    if (!get_option('rtb2wr206') || get_option('rtb2wr206') == '') {
-        echo '<div id="b2wr_notice_block" class="error"><p>Due to recent updates on blogger.com, Blogger to WordPress Redirection plugin has been rewritten. The process has also changed completely. Please refer the updated instructions here: <a class="blue_color" href="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Read more details about this update at Our Blog">(Read More…)</a><span><input type="button" id="hide_b2wr_notice_block" value="Hide this message!" class="button"></span></p></div>';
-    }
+	if ( ! get_option( 'rtb2wr206' ) || get_option( 'rtb2wr206' ) == '' ) {
+		echo '<div id="b2wr_notice_block" class="error"><p>Due to recent updates on blogger.com, Blogger to WordPress Redirection plugin has been rewritten. The process has also changed completely. Please refer the updated instructions here: <a class="blue_color" href="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Read more details about this update at Our Blog">(Read More…)</a><span><input type="button" id="hide_b2wr_notice_block" value="Hide this message!" class="button"></span></p></div>';
+	}
 }
+
 //add_action('admin_notices', 'rt_Blogger_to_Wordpress_Update_Notice', 5);
 
 function rt_b2wr_hide_notice_block() {
-    update_option('rtb2wr206', 'done');
+	update_option( 'rtb2wr206', 'done' );
+
 }
-add_action('wp_ajax_rt_b2wr_hide_notice_block', 'rt_b2wr_hide_notice_block');
-?>
+
+add_action( 'wp_ajax_rt_b2wr_hide_notice_block', 'rt_b2wr_hide_notice_block' );
