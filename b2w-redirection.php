@@ -17,7 +17,7 @@ function rt_Blogger_to_Wordpress_add_option() {
 	add_management_page( 'Blogger To Wordpress Redirection', 'Blogger To WordPress Redirection', 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_Blogger_to_Wordpress_Administrative_Page' );
 
 	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', (RT_B2WR_PLUGIN_URL . '/js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), '', true );
-	wp_enqueue_script( 'rt-fb-share', ('http://static.ak.fbcdn.net/connect.php/js/FB.Share' ), '', '', true );
+	wp_enqueue_script( 'rt-fb-share', ('https://static.ak.fbcdn.net/connect.php/js/FB.Share' ), '', '', true );
 
 	wp_enqueue_style( 'rt-blogger-to-wordpress-redirection-css', (RT_B2WR_PLUGIN_URL . '/css/b2w-redirection.css' ) );
 
