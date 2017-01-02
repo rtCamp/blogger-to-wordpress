@@ -1,9 +1,9 @@
 === Blogger To WordPress ===
-Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal
+Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 4.4
-Stable tag: 2.2.4
+Tested up to: 4.7
+Stable tag: 2.2.5
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: http://rtcamp.com/donate/
@@ -53,6 +53,10 @@ You can find [screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress
 
 == Changelog ==
 
+= 2.2.5 =
+
+* Switched to https version for javascript.
+
 = 2.2.2 =
 
 * Fixed SQLi Exploit issue in query. 
@@ -84,7 +88,5 @@ New features added:
 
 == Upgrade Notice ==
 
-= 2.2.2 =
-Code completely rewritten to confirm to updates in Blogger.
-Older code was not treated well by Blogger, for *some* blogs and they got deactivated for brief periods.
-Use this updated version for safest results!
+= 2.2.5 =
+* Switched to https version for javascript.

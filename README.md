@@ -2,9 +2,10 @@
 
 # Blogger To WordPress #
 
-* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [nitun.lanjewar] (http://profiles.wordpress.org/nitun.lanjewar), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [faishal] (http://profiles.wordpress.org/faishal),
+* **Contributors:** [rtcamp] (http://profiles.wordpress.org/rtcamp), [rahul286] (http://profiles.wordpress.org/rahul286), [nitun.lanjewar] (http://profiles.wordpress.org/nitun.lanjewar), [rakshit] (http://profiles.wordpress.org/rakshit), [saurabhshukla] (http://profiles.wordpress.org/saurabhshukla), [faishal] (http://profiles.wordpress.org/faishal), [anantshri] (http://profiles.wordpress.org/anantshri)
 
-* **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html)
+* **License:** [GPL v2 or later] ( http://www.gnu.org/licenses/gpl-2.0.html
+)
 
 * **Donate Link:** http://rtcamp.com/donate/
 
@@ -53,6 +54,10 @@ You can find [screenshots here](http://rtcamp.com/tutorials/blogger-to-wordpress
 
 ## Changelog ##
 
+#### 2.2.5 ####
+
+* Switched to https version for javascript.
+
 #### 2.2.2 ####
 
 * Fixed SQLi Exploit issue in query. 
@@ -82,7 +87,7 @@ New features added:
 
 * Supports rel####canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
-#### 2.2.2 ####
-Code completely rewritten to confirm to updates in Blogger.
-Older code was not treated well by Blogger, for *some* blogs and they got deactivated for brief periods.
-Use this updated version for safest results!
+## Upgrade Notice ##
+
+#### 2.2.5 ####
+Switched to https version for javascript.
