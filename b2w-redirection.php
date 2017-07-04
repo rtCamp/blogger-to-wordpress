@@ -10,7 +10,7 @@ Requires at least: 3.2
 Tested up to: 4.7
 */
 
-define( 'RT_B2WR_PLUGIN_URL', WP_PLUGIN_URL . '/' . basename( dirname( __FILE__ ) ) );
+define( 'RT_B2WR_PLUGIN_URL', plugins_url() . '/' . basename( dirname( __FILE__ ) ) );
 
 /* Add option to Tools Menu */
 function rt_Blogger_to_Wordpress_add_option() {
@@ -38,7 +38,7 @@ function rt_Blogger_to_Wordpress_Administrative_Page() { ?>
             <h2 id="btowp_h2"><?php _e('Blogger to Wordpress Redirection'); ?></h2>
         </div>
         <div class="clear"></div>
-        
+
         <div id="content_block" class="align_left">
             <p class="description">This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address <code>(e.g. xyz.blogspot.com)</code> which are moved to new custom domain <code>(e.g. xyz.com)</code></p>
             <div id="message" class="error"><p>Please keep this plugin <strong>activated</strong> for redirection to work.</p></div>
@@ -48,7 +48,7 @@ function rt_Blogger_to_Wordpress_Administrative_Page() { ?>
             <input type="submit" class="button-primary" name="start" id ="start_config" value="Start Configuration" onclick="rt_start_config()" />
             <p id="get_config" class="clear"></p>
         </div>
-    
+
         <div id="ads_block" class="metabox-holder align_left">
             <div class="postbox-container">
                 <div class="meta-box-sortables ui-sortable">
@@ -66,7 +66,7 @@ function rt_Blogger_to_Wordpress_Administrative_Page() { ?>
                         <div title="Click to toggle" class="handlediv"><br></div>
                         <h3 class="hndle"><span><strong>Join Us on Facebook</strong></span></h3>
                         <div class="inside" style="text-align:center;">
-                            <iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FrtCamp.solutions&amp;width=242&amp;height=182&amp;connections=4&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:242px; height:182px"></iframe> 
+                            <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FrtCamp.solutions&amp;width=242&amp;height=182&amp;connections=4&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:242px; height:182px"></iframe>
                         </div>
                     </div>
 
@@ -86,18 +86,18 @@ function rt_Blogger_to_Wordpress_Administrative_Page() { ?>
                                     <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
                                     <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                     <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-                                </form>                                                                          
+                                </form>
                             </div>
                             <div class="rt-social-share" style="text-align:center; width: 127px; margin: 2px auto">
-                                <div class="rt-facebook" style="float:left; margin-right:5px;">	
+                                <div class="rt-facebook" style="float:left; margin-right:5px;">
                                     <a style=" text-align:center;" name="fb_share" type="box_count" share_url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/"></a>
                                 </div>
-                                <div class="rt-twitter" style="">	
-                                    <a href="http://twitter.com/share"  class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a> 
-                                    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+                                <div class="rt-twitter" style="">
+                                    <a href="http://twitter.com/share"  class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a>
+                                    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
                                 </div>
-                                <div class="clear"></div>							
-                            </div>	
+                                <div class="clear"></div>
+                            </div>
                         </div><!-- end of .inside -->
                     </div>
 
@@ -130,7 +130,7 @@ function rt_b2wr_get_config(){
 	//get all blogger domains, if avaliable
 	$sql = "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} where meta_key = 'blogger_blog'";
 	$results = $wpdb->get_results($sql);
-	
+
 	if(!$results){
 		$err_str = '<p id="error_msg">Sorry… No posts found that were imported from a Blogger.com blog</p>';
                 $err_str .= '<strong><a href="'. get_bloginfo('url').'/wp-admin/admin.php?import=blogger">Import from Blogger.com</a></strong> first and then "Start Configuration"';
