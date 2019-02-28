@@ -7,13 +7,13 @@
 
 /*
 Plugin Name: Blogger To WordPress
-Plugin URI: http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/
+Plugin URI: https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/
 Description: This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address (e.g. xyz.blogspot.com) which are moved to new custom domain (e.g. xyz.com)
 Version: 2.2.5
 Author: rtCamp
 Author URI: http://rtcamp.com/
 Requires at least: 3.2
-Tested up to: 4.7
+Tested up to: 5.1
 */
 
 define( 'RT_B2WR_PLUGIN_URL', plugins_url() . '/' . basename( dirname( __FILE__ ) ) );
