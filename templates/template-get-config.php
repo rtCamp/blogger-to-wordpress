@@ -11,18 +11,30 @@
 if ( empty( $results ) ) {
 	?>
 
-	<p id="error_msg">Sorry… No posts found that were imported from a Blogger.com blog</p>
+	<p id="error_msg"><?php esc_html_e( 'Sorry… No posts found that were imported from a Blogger.com blog', 'blogger-to-wordpress' ); ?></p>
 	<strong>
-		<a href="<?php echo esc_url( RT_B2WR_BLOG_URL . '/wp-admin/admin.php?import=blogger' ); ?> ">Import from Blogger.com</a>
-	</strong> first and then "Start Configuration"
+		<a href="<?php echo esc_url( RT_B2WR_BLOG_URL . '/wp-admin/admin.php?import=blogger' ); ?> "><?php esc_html_e( 'Import from Blogger.com', 'wordpress-to-blogger' ); ?></a>
+	</strong> 
+	<?php esc_html_e( 'first and then "Start Configuration"', 'blogger-to-wordpress' ); ?>
 
 	<?php
 	die();
 }
 ?>
 	<br/>
-	<h3><u>List of Blogs</u></h3>
-	We found posts from following Blogger Blog(s) in your current WordPress installation. Click on <b>Get Code</b> button to generate the redirection code for the chosen Blogger blog<br /><br />
+	<h3><u> <?php printf( '%1$s', esc_html__( 'List of Blogs' ) ); ?> </u></h3>
+	<?php
+		printf(
+			'%1$s',
+			wp_kses(
+				__( 'We found posts from following Blogger Blog(s) in your current WordPress installation. Click on <b>Get Code</b> button to generate the redirection code for the chosen Blogger blog<br /><br />', 'blogger-to-wordpress' ),
+				array(
+					'br' => array(),
+					'b'  => array(),
+				)
+			)
+		);
+		?>
 
 	<table width="350px">
 		<?php

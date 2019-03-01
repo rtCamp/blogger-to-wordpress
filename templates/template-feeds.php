@@ -10,7 +10,7 @@
 	<?php
 
 	if ( 0 === $maxitems ) {
-		echo '<li>No items.</li>';
+		printf( '<li> %1$s </li>', esc_html__( 'No Items', 'blogger-to-wordpress' ) );
 	} else {
 		foreach ( $rss_items as $item ) {
 			?>
