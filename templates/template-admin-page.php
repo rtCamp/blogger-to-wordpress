@@ -9,7 +9,7 @@
 <div class="wrap">
 	<div>
 		<img id="btowp_img" alt="B2W-Redirection" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
-		<h2 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection' ); ?></h2>
+		<h2 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wp' ); ?></h2>
 	</div>
 
 	<div class="clear"></div>
@@ -20,7 +20,7 @@
 		<h3><u>Start Configuration</u></h3>
 		<h4>Press "Start Configuration" button to generate code for Blogger.com blog</h4>
 		<p>Plugin will automatically detect Blogger.com blog from where you have imported.</p>
-		<input type="submit" class="button-primary" name="start" id ="start_config" value="Start Configuration" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'admin_nonce' ) ); ?>')" />
+		<input type="submit" class="button-primary" name="start" id ="start_config" value="Start Configuration" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
 		<p id="get_config" class="clear"></p>
 	</div>
 
