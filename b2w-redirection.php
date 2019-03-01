@@ -238,6 +238,12 @@ function rt_blogger_to_wordpress_update_notice() {
  */
 function rt_b2wr_hide_notice_block() {
 
+	if ( ! isset( $_POST['update_nonce'] )
+	|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['update_nonce'] ) ), 'b2w_update_nonce' )
+	) {
+		return;
+	}
+
 	update_option( 'rtb2wr206', 'done' );
 
 }

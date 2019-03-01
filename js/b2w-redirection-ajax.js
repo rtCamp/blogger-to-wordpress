@@ -90,11 +90,12 @@ function check_configuration(domain_name, nonce){
 
 jQuery( '#hide_b2wr_notice_block' ).click(
 	function() {
+		const nonce = $('#b2wr_nonce_field').val();
 		jQuery.ajax(
 			{
 				url:'admin-ajax.php',
 				type: 'POST',
-				data: 'action=rt_b2wr_hide_notice_block',
+				data: 'action=rt_b2wr_hide_notice_block&update_nonce='+nonce,
 				success: function(result){
 					jQuery( '#b2wr_notice_block' ).slideUp( 'slow','linear' );
 				}
