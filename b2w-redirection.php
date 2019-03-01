@@ -1,22 +1,20 @@
 <?php
 /**
- * Blogger to WordPress Plugin
+ * Plugin Name: Blogger To WordPress
+ * Plugin URI: https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/
+ * Description: This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address (e.g. xyz.blogspot.com) which are moved to new custom domain (e.g. xyz.com)
+ * Version: 2.2.5
+ * Author: rtCamp
+ * Author URI: https://rtcamp.com/
+ * Requires at least: 3.2
+ * Tested up to: 5.1
+ * Text Domain: blogger-to-wordpress
  *
- * @package BloggerToWordpress
+ * @package blogger-to-wordpress
  */
 
-/*
-Plugin Name: Blogger To WordPress
-Plugin URI: https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/
-Description: This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address (e.g. xyz.blogspot.com) which are moved to new custom domain (e.g. xyz.com)
-Version: 2.2.5
-Author: rtCamp
-Author URI: http://rtcamp.com/
-Requires at least: 3.2
-Tested up to: 5.1
-*/
-
-define( 'RT_B2WR_PLUGIN_URL', plugins_url() . '/' . basename( dirname( __FILE__ ) ) );
+define( 'RT_B2WR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'RT_B2WR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 /**
  *  Add option to Tools Menu
@@ -24,12 +22,12 @@ define( 'RT_B2WR_PLUGIN_URL', plugins_url() . '/' . basename( dirname( __FILE__ 
 function rt_blogger_to_wordpress_add_option() {
 	add_management_page( 'Blogger To WordPress Redirection', 'Blogger To WordPress Redirection', 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
 
-	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', ( RT_B2WR_PLUGIN_URL . '/js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), filemtime( ABSPATH . 'wp-content/plugins/blogger-to-wordpress/js/b2w-redirection-ajax.js' ), true );
+	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', ( RT_B2WR_PLUGIN_URL . 'js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), filemtime( RT_B2WR_PLUGIN_DIR . 'js/b2w-redirection-ajax.js' ), true );
 	// No need for version in external script.
 	wp_enqueue_script( 'rt-fb-share', ( 'https://static.ak.fbcdn.net/connect.php/js/FB.Share' ), '', '', true ); //phpcs:ignore 
 	wp_enqueue_script( 'rt-twitter-widget-js', ( 'https://platform.twitter.com/widgets.js' ), '', '', true ); //phpcs:ignore
 
-	wp_enqueue_style( 'rt-blogger-to-wordpress-redirection-css', ( RT_B2WR_PLUGIN_URL . '/css/b2w-redirection.css' ), array(), filemtime( ABSPATH . 'wp-content/plugins/blogger-to-wordpress/css/b2w-redirection.css' ) );
+	wp_enqueue_style( 'rt-blogger-to-wordpress-redirection-css', ( RT_B2WR_PLUGIN_URL . 'css/b2w-redirection.css' ), array(), filemtime( RT_B2WR_PLUGIN_DIR . 'css/b2w-redirection.css' ) );
 	$page = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING );
 	if ( ! empty( $page ) && 'rt-blogger-to-wordpress-redirection' === $page ) {
 		wp_enqueue_script( 'dashboard' );
@@ -43,98 +41,8 @@ add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
 /**
  * Administrative Page - Begin
  */
-function rt_blogger_to_wordpress_administrative_page() { ?>
-	<div class="wrap">
-		<div>
-			<img id="btowp_img" alt="B2W-Redirection" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>/images/btowp_img.png" />
-			<h2 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection' ); ?></h2>
-		</div>
-
-		<div class="clear"></div>
-
-		<div id="content_block" class="align_left">
-			<p class="description">This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address <code>(e.g. xyz.blogspot.com)</code> which are moved to new custom domain <code>(e.g. xyz.com)</code></p>
-			<div id="message" class="error"><p>Please keep this plugin <strong>activated</strong> for redirection to work.</p></div>
-			<h3><u>Start Configuration</u></h3>
-			<h4>Press "Start Configuration" button to generate code for Blogger.com blog</h4>
-			<p>Plugin will automatically detect Blogger.com blog from where you have imported.</p>
-			<input type="submit" class="button-primary" name="start" id ="start_config" value="Start Configuration" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'admin_nonce' ) ); ?>')" />
-			<p id="get_config" class="clear"></p>
-		</div>
-
-		<div id="ads_block" class="metabox-holder align_left">
-			<div class="postbox-container">
-				<div class="meta-box-sortables ui-sortable">
-					<div class="postbox" id="social">
-						<div title="Click to toggle" class="handlediv"><br></div>
-						<h3 class="hndle"><span><strong>Getting Social is Good</strong></span></h3>
-						<div class="inside" style="text-align:center;">
-							<a href="http://www.facebook.com/rtCamp.solutions" target="_blank" title="Become a fan on Facebook"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>/images/facebook.png" alt="Twitter" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="http://twitter.com/rtcamp" target="_blank" title="Follow us on Twitter"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>/images/twitter.png" alt="Facebook" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="http://feeds.feedburner.com/rtcamp" target="_blank" title="Subscribe to our feeds"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>/images/rss.png" alt="RSS Feeds" /></a>
-						</div>
-					</div>
-
-					<div class="postbox" id="joinfb">
-						<div title="Click to toggle" class="handlediv"><br></div>
-						<h3 class="hndle"><span><strong>Join Us on Facebook</strong></span></h3>
-						<div class="inside" style="text-align:center;">
-							<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FrtCamp.solutions&amp;width=242&amp;height=182&amp;connections=4&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:242px; height:182px"></iframe>
-						</div>
-					</div>
-
-					<div class="postbox" id="donations">
-						<div title="Click to toggle" class="handlediv"><br></div>
-						<h3 class="hndle"><span><strong>Promote, Donate, Share...</strong></span></h3>
-						<div class="inside">
-							A lot of time and effort goes into the development of this plugin. If you find it useful, please consider making a donation, or a review on your blog or sharing this with your friends to help us.<br/><br/>
-							<div class="rt-paypal" style="text-align:center">
-								<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-									<input type="hidden" name="cmd" value="_donations">
-									<input type="hidden" name="business" value="paypal@rtcamp.com">
-									<input type="hidden" name="lc" value="US">
-									<input type="hidden" name="item_name" value="Blogger To WordPress Migration">
-									<input type="hidden" name="no_note" value="0">
-									<input type="hidden" name="currency_code" value="USD">
-									<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-									<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
-									<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-								</form>
-							</div>
-
-							<div class="rt-social-share" style="text-align:center; width: 127px; margin: 2px auto">
-								<div class="rt-facebook" style="float:left; margin-right:5px;">
-									<a style=" text-align:center;" name="fb_share" type="box_count" share_url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/"></a>
-								</div>
-								<div class="rt-twitter" style="">
-									<a href="http://twitter.com/share"  class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a>
-								</div>
-								<div class="clear"></div>
-							</div>
-
-						</div><!-- end of .inside -->
-					</div>
-
-					<div class="postbox" id="support">
-						<div title="Click to toggle" class="handlediv"><br></div>
-						<h3 class="hndle"><span><strong>Free Support</strong></span></h3>
-						<div class="inside">
-							If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="http://rtcamp.com/support/forum/blogger-to-wordpress/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.
-						</div>
-					</div>
-
-					<div class="postbox" id="latest_news">
-						<div title="Click to toggle" class="handlediv"><br></div>
-						<h3 class="hndle"><span><strong>Latest News from Our Blog</strong></span></h3>
-						<div class="inside">
-							<?php rt_get_feeds_from_blogger_to_wp(); ?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<?php
+function rt_blogger_to_wordpress_administrative_page() {
+	include_once RT_B2WR_PLUGIN_DIR . 'templates/template-admin-page.php';
 }
 
 /**
@@ -156,7 +64,7 @@ function rt_b2wr_get_config() {
 		$err_str  = '<p id="error_msg">Sorry… No posts found that were imported from a Blogger.com blog</p>';
 		$err_str .= '<strong><a href="' . get_bloginfo( 'url' ) . '/wp-admin/admin.php?import=blogger">Import from Blogger.com</a></strong> first and then "Start Configuration"';
 
-		echo esc_html( $err_str );
+		echo $err_str;
 		die();
 	}
 
@@ -262,14 +170,14 @@ function rt_b2wr_verify_config() {
 	// unprepared sql ok.
 	$rand_col2    = $wpdb->get_results( $sql1 ); //phpcs:ignore
 
-	$blogger_url  = 'http://' . $domain_name . $rand_col2[0]->meta_value;
+	$blogger_url  = 'https://' . $domain_name . $rand_col2[0]->meta_value;
 	$blogger_link = '<a href = "' . esc_url( $blogger_url ) . '" target = "_blank">' . $blogger_url . '</a> ';
 	$local_url    = get_permalink( $rand_post_id );
 	$local_link   = '<a href = "' . esc_url( $local_url ) . '" target = "_blank">' . $local_url . '</a> ';
 
 	// escape safe.
 	echo '<h3><u>Test Case</u></h3><pre>Clicking this link &raquo; <b>' . $blogger_link . '</b><br/>Should redirect to &raquo; <b>' . $local_link . '</b></pre>'; //phpcs:ignore 
-	die( '<p><b>If you are stuck, you can use our <a href="http://rtcamp.com/support/forum/blogger-to-wordpress/" target="_blank">free support forum</a> or <a href="http://rtcamp.com/contact/" target="_blank">hire us</a>.<br /><br />' );
+	die( '<p><b>If you are stuck, you can use our <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank">free support forum</a> or <a href="https://rtcamp.com/contact/" target="_blank">hire us</a>.<br /><br />' );
 
 }
 
@@ -281,7 +189,7 @@ add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
 function rt_get_feeds_from_blogger_to_wp() {
 	include_once ABSPATH . WPINC . '/feed.php';
 
-	$rss = fetch_feed( 'http://rtcamp.com/tag/blogger-to-wordpress/feed' );
+	$rss = fetch_feed( 'https://bloggertowp.org/feed/' );
 
 	if ( ! is_wp_error( $rss ) ) {
 		$maxitems  = $rss->get_item_quantity( 5 );
@@ -315,7 +223,7 @@ function rt_get_feeds_from_blogger_to_wp() {
 function rt_blogger_to_wordpress_update_notice() {
 
 	if ( ! get_option( 'rtb2wr206' ) || '' === get_option( 'rtb2wr206' ) ) {
-		echo '<div id="b2wr_notice_block" class="error"><p>Due to recent updates on blogger.com, Blogger to WordPress Redirection plugin has been rewritten. The process has also changed completely. Please refer the updated instructions here: <a class="blue_color" href="http://rtcamp.com/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Read more details about this update at Our Blog">(Read More…)</a><span><input type="button" id="hide_b2wr_notice_block" value="Hide this message!" class="button"></span></p></div>';
+		echo '<div id="b2wr_notice_block" class="error"><p>Due to recent updates on blogger.com, Blogger to WordPress Redirection plugin has been rewritten. The process has also changed completely. Please refer the updated instructions here: <a class="blue_color" href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Read more details about this update at Our Blog">(Read More…)</a><span><input type="button" id="hide_b2wr_notice_block" value="Hide this message!" class="button"></span></p></div>';
 	}
 
 }
