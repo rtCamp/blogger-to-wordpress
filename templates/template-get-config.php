@@ -2,7 +2,7 @@
 /**
  * Get config template file
  *
- * @package blogger-to-wordpress
+ * @package Blogger_To_Wordpress
  */
 
 ?>

@@ -10,7 +10,7 @@
  * Tested up to: 5.1
  * Text Domain: blogger-to-wordpress
  *
- * @package blogger-to-wordpress
+ * @package Blogger_To_Wordpress
  */
 
 define( 'RT_B2WR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
