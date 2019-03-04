@@ -19,7 +19,7 @@
 			?>
 
 			<li>
-				<a href="<?php echo esc_url( $item->get_permalink() ); ?>" title="Posted <?php echo esc_attr( $item->get_date( 'j F Y | g:i a' ) ); ?>"><?php echo esc_html( $item->get_title() ); ?></a>
+				<a href="<?php echo esc_url( $item->get_permalink() ); ?>" title="<?php echo esc_attr( sprintf( '%1$s %2$s', __( 'Posted', 'blogger-to-wordpress' ), $item->get_date( 'j F Y | g:i a' ) ) ); ?>"><?php echo esc_html( $item->get_title() ); ?></a>
 			</li>
 
 			<?php

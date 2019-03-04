@@ -60,7 +60,7 @@
 			<?php esc_html_e( 'Plugin will automatically detect Blogger.com blog from where you have imported.', 'blogger-to-wordpress' ); ?>
 		</p>
 
-		<input type="submit" class="button-primary" name="start" id ="start_config" value="Start Configuration" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
+		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress' ); ?>" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
 
 		<p id="get_config" class="clear"></p>
 	</div>
@@ -69,19 +69,19 @@
 		<div class="postbox-container">
 			<div class="meta-box-sortables ui-sortable">
 				<div class="postbox" id="social">
-					<div title="Click to toggle" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
 
 					<h3 class="hndle"><span><strong><?php esc_html_e( 'Getting Social is Good', 'blogger-to-wordpress' ); ?></strong></span></h3>
 
 					<div class="inside" style="text-align:center;">
-						<a href="https://www.facebook.com/rtCamp.solutions" target="_blank" title="Become a fan on Facebook"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/facebook.png" alt="Twitter" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="https://twitter.com/rtcamp" target="_blank" title="Follow us on Twitter"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/twitter.png" alt="Facebook" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="https://feeds.feedburner.com/rtcamp" target="_blank" title="Subscribe to our feeds"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/rss.png" alt="RSS Feeds" /></a>
+						<a href="https://www.facebook.com/rtCamp.solutions" target="_blank" title="<?php esc_attr_e( 'Become a fan on Facebook', 'blogger-to-wordpress' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/facebook.png" alt="<?php esc_attr_e( 'Twitter', 'blogger-to-wordpress' ); ?>" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="https://twitter.com/rtcamp" target="_blank" title="<?php esc_attr_e( 'Follow us on Twitter', 'blogger-to-wordpress' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/twitter.png" alt="<?php esc_attr_e( 'Facebook', 'blogger-to-wordpress' ); ?>" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="https://feeds.feedburner.com/rtcamp" target="_blank" title=" <?php esc_attr_e( 'Subscribe to our feeds', 'blogger-to-wordpress' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/rss.png" alt="<?php esc_attr_e( 'RSS Feeds', 'blogger-to-wordpress' ); ?>" /></a>
 					</div>
 				</div>
 
 				<div class="postbox" id="joinfb">
-					<div title="Click to toggle" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
 
 					<h3 class="hndle"><span><strong><?php esc_html_e( 'Join Us on Facebook', 'blogger-to-wordpress' ); ?></strong></span></h3>
 
@@ -119,7 +119,7 @@
 							</div>
 
 							<div class="rt-twitter" style="">
-								<a href="https://twitter.com/share"  class="twitter-share-button" data-text="Blogger to WordPress Redirection Plugin"  data-url="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp">Tweet</a>
+								<a href="https://twitter.com/share"  class="twitter-share-button" data-text="<?php esc_attr_e( 'Blogger to WordPress Redirection Plugin', 'blogger-to-wordpress' ); ?>"  data-url="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp"><?php esc_html_e( 'Tweet', 'blogger-to-wordpress' ); ?></a>
 							</div>
 
 							<div class="clear"></div>
@@ -129,7 +129,7 @@
 				</div>
 
 				<div class="postbox" id="support">
-					<div title="Click to toggle" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
 
 					<h3 class="hndle"><span><strong><?php esc_html_e( 'Free Support', 'blogger-to-wordpress' ); ?></strong></span></h3>
 
@@ -152,7 +152,7 @@
 				</div>
 
 				<div class="postbox" id="latest_news">
-					<div title="Click to toggle" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
 
 					<h3 class="hndle"><span><strong><?php esc_html_e( 'Latest News from Our Blog', 'blogger-to-wordpress' ); ?></strong></span></h3>
 

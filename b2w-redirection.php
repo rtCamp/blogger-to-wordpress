@@ -168,30 +168,16 @@ function rt_b2wr_verify_config() {
 	$local_url    = get_permalink( $rand_post_id );
 	$local_link   = sprintf( '<a href = "%1$s" target = "_blank">%1$s</a> ', esc_url( $local_url ) );
 
+	// Escape safe.
 	printf(
-		'<h3><u>%3$s</u></h3><pre> %4$s &raquo; <b>%1$s</b><br/> %5$s&raquo; <b>%2$s</b></pre>',
-		wp_kses(
-			$blogger_link,
-			array(
-				'a' => array(
-					'href'  => array(),
-					'title' => array(),
-				),
-			)
-		),
-		wp_kses(
-			$local_link,
-			array(
-				'a' => array(
-					'href'  => array(),
-					'title' => array(),
-				),
-			)
-		),
+		'<h3><u>%1$s</u></h3><pre> %2$s &raquo; <b>%3$s</b><br/> %4$s&raquo; <b>%5$s</b></pre>',
 		esc_html__( 'Test Case', 'blogger-to-wordpress' ),
 		esc_html__( 'Clicking this link', 'blogger-to-wordpress' ),
-		esc_html__( 'Should redirect to', 'blogger-to-wordpress' )
+		$blogger_link, //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		esc_html__( 'Should redirect to', 'blogger-to-wordpress' ),
+		$local_link //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	);
+
 	printf(
 		'<p><b> %1$s <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank"> %2$s </a> or <a href="https://rtcamp.com/contact/" target="_blank"> %3$s </a>.<br /><br />',
 		esc_html__( 'If you are stuck, you can use our', 'blogger-to-wordpress' ),
