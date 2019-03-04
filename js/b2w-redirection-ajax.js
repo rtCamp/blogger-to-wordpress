@@ -1,3 +1,16 @@
+/**
+ * B2W Javascript functions.
+ *
+ * @package Blogger_to_Wordpress
+ */
+
+/**
+ * Gets configuration and appends to dom.
+ *
+ * @param {String} nonce
+ *
+ * @returns {void}
+ */
 function rt_start_config( nonce ){
 	if (jQuery( '#get_config' ).html() != '') {
 		jQuery( '#get_config' ).html( '' );
@@ -13,7 +26,16 @@ function rt_start_config( nonce ){
 		}
 	);
 }
-
+/**
+ * Generates blogger code
+ *
+ * @param {int} num
+ * @param {String} domain_name
+ * @param {String} curr_domain
+ * @param {String} nonce
+ *
+ * @returns {void}
+ */
 function generate_code(num, domain_name, curr_domain, nonce){
 
 	jQuery.ajax(
@@ -30,6 +52,14 @@ function generate_code(num, domain_name, curr_domain, nonce){
 
 }
 
+/**
+ * Checks configuration
+ *
+ * @param {String} domain_name domain name
+ * @param {String} nonce nonce
+ *
+ * @returns {void}
+ */
 function check_configuration(domain_name, nonce){
 	if (jQuery( '#verify_config' ).html() != '') {
 		jQuery( '#verify_config' ).html( '' );
