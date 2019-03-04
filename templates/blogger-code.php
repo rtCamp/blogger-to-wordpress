@@ -13,7 +13,7 @@
 	<u>Generated Code</u>
 </h3>
 
-<strong>Redirection code for <a href="http://{{domain_name}}">{{domain_name}}</a></strong>
+<strong>Redirection code for <a href="//{{domain_name}}">{{domain_name}}</a></strong>
 
 <br/>
 

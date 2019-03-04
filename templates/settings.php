@@ -9,7 +9,7 @@
 <div class="wrap">
 
 	<div>
-		<img id="btowp_img" alt="B2W-Redirection" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
+		<img id="btowp_img" alt="<?php esc_attr_e( 'B2W-Redirection', 'blogger-to-wordpress' ); ?>" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
 		<h2 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wp' ); ?></h2>
 	</div>
 
@@ -91,7 +91,7 @@
 				</div>
 
 				<div class="postbox" id="donations">
-					<div title="Click to toggle" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
 
 					<h3 class="hndle"><span><strong> <?php esc_html_e( 'Promote, Donate, Share...', 'blogger-to-wordpress' ); ?></strong></span></h3>
 
@@ -108,7 +108,7 @@
 								<input type="hidden" name="no_note" value="0">
 								<input type="hidden" name="currency_code" value="USD">
 								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-								<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="<?php esc_attr_e( 'PayPal - The safer, easier way to pay online!', 'blogger-to-wordpress' ); ?>">
 								<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 							</form>
 						</div>

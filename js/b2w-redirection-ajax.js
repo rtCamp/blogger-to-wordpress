@@ -18,7 +18,7 @@ function generate_code(num, domain_name, curr_domain, nonce){
 
 	jQuery.ajax(
 		{
-			url:'../wp-content/plugins/blogger-to-wordpress/templates/template-blogger-code.php',
+			url:'../wp-content/plugins/blogger-to-wordpress/templates/blogger-code.php',
 			success: function(response){
 				response = response.replace( /{{curr_domain}}/g, curr_domain );
 				response = response.replace( /{{domain_name}}/g, domain_name );
