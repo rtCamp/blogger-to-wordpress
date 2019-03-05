@@ -40,7 +40,7 @@ function rt_start_config( nonce ){
 function generate_code( domain_name, curr_domain, nonce){
 
 	jQuery( '#code_here' ).show();
-	let response = jQuery( '#code_here' ).html();
+	var response = jQuery( '#code_here' ).html();
 	response = response.replace( /{{curr_domain}}/g, curr_domain );
 	response = response.replace( /{{domain_name}}/g, domain_name );
 	response = response.replace( /{{nonce}}/g, nonce );
@@ -77,7 +77,7 @@ function check_configuration( domain_name, nonce ) {
 jQuery( '#hide_b2wr_notice_block' ).click(
 	function() {
 
-		const nonce = $( '#b2wr_nonce_field' ).val();
+		var nonce = $( '#b2wr_nonce_field' ).val();
 
 		jQuery.ajax(
 			{
