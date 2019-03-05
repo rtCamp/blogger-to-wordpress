@@ -1,7 +1,7 @@
 #btowp_img {padding:5px 5px 0;float:left;vertical-align:bottom;display:inline-block;}
 #btowp_title {float:left;display:inline-block}
 #content_block {width:66%; float: left;}
-#ads_block {width:33%; padding-top: 0; float: right;} 
+#ads_block {width:33%; padding-top: 0; float: right;}
 #ads_block > div {width:80%}
 #ads_block .inside {font-family:"Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif;line-height:1.5}
 #ads_block .inside span{font-style:italic;font-weight:bold}
