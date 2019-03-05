@@ -17,7 +17,8 @@
 		<a href="<?php echo esc_url( $blogger_url ); ?>" target="_blank"><?php echo esc_url( $blogger_url ); ?></a>
 	</b>
 	<br/>
-	<?php esc_html_e( 'Should redirect to', 'blogger-to-wordpress' ); ?>&raquo;
+	<?php esc_html_e( 'Should redirect to', 'blogger-to-wordpress' ); ?>
+	&raquo;
 	<b>
 		<a href="<?php echo esc_url( $local_url ); ?>" target="_blank"><?php echo esc_url( $local_url ); ?></a>
 	</b>
