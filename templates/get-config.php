@@ -54,7 +54,7 @@ if ( empty( $results ) ) {
 			<tr>
 				<td width="15px"><?php echo esc_html( $site_no ); ?></td>
 				<td><b><?php echo esc_html( $result->meta_value ); ?> </b></td>
-				<td  width="75px"><input type="submit" class="button" onclick = "generate_code(<?php echo sprintf( '\'%1$s\',\'%2$s\',\'%3$s\',\'%4$s\'', esc_js( $site_no ), esc_js( $result->meta_value ), esc_js( RT_B2WR_BLOG_URL ), esc_js( $nonce ) ); ?>);" name="start" value="<?php esc_attr_e( 'Get Code', 'blogger-to-wordpress' ); ?>"/></td>
+				<td  width="75px"><input type="submit" class="button" onclick = "generate_code(<?php echo sprintf( '\'%1$s\',\'%2$s\',\'%3$s\'', esc_js( $result->meta_value ), esc_js( RT_B2WR_BLOG_URL ), esc_js( $nonce ) ); ?>);" name="start" value="<?php esc_attr_e( 'Get Code', 'blogger-to-wordpress' ); ?>"/></td>
 			</tr>
 
 			<?php
@@ -63,4 +63,6 @@ if ( empty( $results ) ) {
 
 	</table>
 
-	<div id ="code_here"></div>
+	<div id ="code_here" class="blogger-code">
+		<?php require_once RT_B2WR_PLUGIN_DIR . 'templates/blogger-code.php'; ?>
+	</div>
