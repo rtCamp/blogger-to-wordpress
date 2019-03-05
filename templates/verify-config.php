@@ -10,7 +10,7 @@
 <h3>
 	<u><?php esc_html_e( 'Test Case', 'blogger-to-wordpress' ); ?></u>
 </h3>
-<pre>
+<pre class="test-cases">
 	<?php esc_html_e( 'Clicking this link', 'blogger-to-wordpress' ); ?>
 	&raquo;
 	<b>
@@ -26,7 +26,7 @@
 <p>
 	<b>
 		<?php
-		wp_kses(
+		echo wp_kses(
 			__( 'If you are stuck, you can use our <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank">free support forum</a> or <a href="https://rtcamp.com/contact/" target="_blank">hire us.</a>', 'blogger-to-wordpress' ),
 			array(
 				'a' => array(
