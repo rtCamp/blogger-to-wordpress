@@ -130,7 +130,7 @@
 					<div class="inside">
 						<?php
 						echo wp_kses(
-							__( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.', 'blogger-to-wordpress' ),
+							__( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.', 'blogger-to-wordpress' ),
 							array(
 								'a' => array(
 									'href'  => array(),
