@@ -83,7 +83,7 @@ New features added:
 
 * Supports importing from multiple Blogger.com blog
 
-* Supports rel canonical, meta-refresh tags on Blogger.com which will speed-up redirection
+* Supports rel=canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
 ## Upgrade Notice
 
