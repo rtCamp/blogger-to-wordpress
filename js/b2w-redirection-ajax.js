@@ -31,18 +31,18 @@ function rt_start_config( nonce ){
 /**
  * Generates blogger code
  *
- * @param {int} num
+ * @param {int} pluginurl
  * @param {String} domain_name
  * @param {String} curr_domain
  * @param {String} nonce
  *
  * @returns {void}
  */
-function generate_code(num, domain_name, curr_domain, nonce){
+function generate_code(pluginurl, domain_name, curr_domain, nonce){
 
 	jQuery.ajax(
 		{
-			url:'../wp-content/plugins/blogger-to-wordpress/templates/blogger-code.php',
+			url: pluginurl + 'templates/blogger-code.php',
 			success: function(response){
 				response = response.replace( /{{curr_domain}}/g, curr_domain );
 				response = response.replace( /{{domain_name}}/g, domain_name );
