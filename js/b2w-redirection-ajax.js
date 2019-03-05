@@ -31,26 +31,20 @@ function rt_start_config( nonce ){
 /**
  * Generates blogger code
  *
- * @param {int} pluginurl
  * @param {String} domain_name
  * @param {String} curr_domain
  * @param {String} nonce
  *
  * @returns {void}
  */
-function generate_code(pluginurl, domain_name, curr_domain, nonce){
+function generate_code( domain_name, curr_domain, nonce){
 
-	jQuery.ajax(
-		{
-			url: pluginurl + 'templates/blogger-code.php',
-			success: function(response){
-				response = response.replace( /{{curr_domain}}/g, curr_domain );
-				response = response.replace( /{{domain_name}}/g, domain_name );
-				response = response.replace( /{{nonce}}/g, nonce );
-				jQuery( '#code_here' ).html( response );
-			}
-		}
-	);
+	jQuery( '#code_here' ).show();
+	let response = jQuery( '#code_here' ).html();
+	response = response.replace( /{{curr_domain}}/g, curr_domain );
+	response = response.replace( /{{domain_name}}/g, domain_name );
+	response = response.replace( /{{nonce}}/g, nonce );
+	jQuery( '#code_here' ).html( response );
 
 }
 
