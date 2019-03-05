@@ -2,7 +2,7 @@
 /**
  * Feeds template file
  *
- * @package Blogger_To_Wordpress
+ * @package Blogger_To_WordPress
  */
 
 ?>

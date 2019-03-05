@@ -2,7 +2,7 @@
 /**
  * Admin page template file
  *
- * @package Blogger_To_Wordpress
+ * @package Blogger_To_WordPress
  */
 
 ?>
@@ -18,13 +18,10 @@
 	<div id="content_block" class="align_left">
 		<p class="description">
 			<?php
-			printf(
-				'%1$s',
-				wp_kses(
-					'This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address <code>(e.g. xyz.blogspot.com)</code> which are moved to new custom domain <code>(e.g. xyz.com)</code>',
-					array(
-						'code' => array(),
-					)
+			echo wp_kses(
+				'This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address <code>(e.g. xyz.blogspot.com)</code> which are moved to new custom domain <code>(e.g. xyz.com)</code>',
+				array(
+					'code' => array(),
 				)
 			);
 			?>
@@ -33,13 +30,10 @@
 		<div id="message" class="error">
 			<p>
 				<?php
-				printf(
-					'%1$s',
-					wp_kses(
-						__( 'Please keep this plugin <strong>activated</strong> for redirection to work.', 'blogger-to-wordpress' ),
-						array(
-							'strong' => array(),
-						)
+				echo wp_kses(
+					__( 'Please keep this plugin <strong>activated</strong> for redirection to work.', 'blogger-to-wordpress' ),
+					array(
+						'strong' => array(),
 					)
 				);
 				?>
@@ -135,16 +129,13 @@
 
 					<div class="inside">
 						<?php
-						printf(
-							'%1$s',
-							wp_kses(
-								__( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.', 'blogger-to-wordpress' ),
-								array(
-									'a' => array(
-										'href'  => array(),
-										'title' => array(),
-									),
-								)
+						echo wp_kses(
+							__( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.', 'blogger-to-wordpress' ),
+							array(
+								'a' => array(
+									'href'  => array(),
+									'title' => array(),
+								),
 							)
 						);
 						?>

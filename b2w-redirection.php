@@ -10,7 +10,7 @@
  * Tested up to: 5.1
  * Text Domain: blogger-to-wordpress
  *
- * @package Blogger_To_Wordpress
+ * @package Blogger_To_WordPress
  */
 
 define( 'RT_B2WR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -27,8 +27,8 @@ function rt_blogger_to_wordpress_add_option() {
 	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', ( RT_B2WR_PLUGIN_URL . 'js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), filemtime( RT_B2WR_PLUGIN_DIR . 'js/b2w-redirection-ajax.js' ), true );
 
 	// No need for version in external script.
-	wp_enqueue_script( 'rt-fb-share', ( 'https://static.ak.fbcdn.net/connect.php/js/FB.Share' ), '', '', true ); //phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
-	wp_enqueue_script( 'rt-twitter-widget-js', ( 'https://platform.twitter.com/widgets.js' ), '', '', true ); //phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
+	wp_enqueue_script( 'rt-fb-share', ( 'https://static.ak.fbcdn.net/connect.php/js/FB.Share' ), '', '', true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
+	wp_enqueue_script( 'rt-twitter-widget-js', ( 'https://platform.twitter.com/widgets.js' ), '', '', true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.NoExplicitVersion
 
 	wp_enqueue_style( 'rt-blogger-to-wordpress-redirection-css', ( RT_B2WR_PLUGIN_URL . 'css/b2w-redirection.css' ), array(), filemtime( RT_B2WR_PLUGIN_DIR . 'css/b2w-redirection.css' ) );
 
@@ -50,7 +50,7 @@ add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
  */
 function rt_blogger_to_wordpress_administrative_page() {
 
-	include_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
+	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
 
 }
 
@@ -73,7 +73,7 @@ function rt_b2wr_get_config() {
 	// unprepared sql ok.
 	$results = $wpdb->get_results( $sql ); //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
 
-	include_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
+	require_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
 
 	die();
 
@@ -87,13 +87,14 @@ add_action( 'wp_ajax_rt_b2wr_get_config', 'rt_b2wr_get_config' );
  */
 function rt_blogger_to_wordpress_redirection() {
 
+	global $wpdb;
+
 	$b2w = filter_input( INPUT_GET, 'b2w', FILTER_SANITIZE_STRING );
 	$b2w = ( ! empty( $b2w ) ) ? $b2w : false;
 
 	if ( false === $b2w ) {
 		return;
 	}
-	global $wpdb;
 
 	$sql = "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} where meta_key = 'blogger_blog'";
 
@@ -120,11 +121,11 @@ function rt_blogger_to_wordpress_redirection() {
 		);
 
 		// unprepared sql ok.
-		$wpurl = $wpdb->get_results( $sqlstr, ARRAY_N ); //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
+		$wpurl = $wpdb->get_results( $sqlstr, ARRAY_N ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
 		if ( ! empty( $wpurl ) ) {
 
 			// wp redirect ok.
-			wp_redirect( get_permalink( $wpurl[0][0] ) ); //phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
+			wp_redirect( get_permalink( $wpurl[0][0] ) ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
 
 			exit;
 		} else {
@@ -155,35 +156,19 @@ function rt_b2wr_verify_config() {
 	$sql = $wpdb->prepare( "SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key = 'blogger_blog' AND meta_value = %s ORDER BY rand() LIMIT 1", $domain_name );
 
 	// unprepared sql ok.
-	$rand_col     = $wpdb->get_results( $sql ); //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
+	$rand_col     = $wpdb->get_results( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
 	$rand_post_id = $rand_col[0]->post_id;
 
 	$sql1 = $wpdb->prepare( "SELECT post_id, meta_value FROM {$wpdb->postmeta} WHERE post_id = %d AND meta_key = 'blogger_permalink' ORDER BY rand() LIMIT 1", $rand_post_id );
 
 	// unprepared sql ok.
-	$rand_col2 = $wpdb->get_results( $sql1 ); //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
+	$rand_col2 = $wpdb->get_results( $sql1 ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
 
-	$blogger_url  = 'https://' . $domain_name . $rand_col2[0]->meta_value;
-	$blogger_link = sprintf( '<a href = "%1$s" target = "_blank">%1$s</a>', esc_url( $blogger_url ) );
-	$local_url    = get_permalink( $rand_post_id );
-	$local_link   = sprintf( '<a href = "%1$s" target = "_blank">%1$s</a> ', esc_url( $local_url ) );
+	$blogger_url = 'https://' . $domain_name . $rand_col2[0]->meta_value;
+	$local_url   = get_permalink( $rand_post_id );
 
-	// Escape safe.
-	printf(
-		'<h3><u>%1$s</u></h3><pre> %2$s &raquo; <b>%3$s</b><br/> %4$s&raquo; <b>%5$s</b></pre>',
-		esc_html__( 'Test Case', 'blogger-to-wordpress' ),
-		esc_html__( 'Clicking this link', 'blogger-to-wordpress' ),
-		$blogger_link, //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		esc_html__( 'Should redirect to', 'blogger-to-wordpress' ),
-		$local_link //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	);
+	require_once RT_B2WR_PLUGIN_DIR . 'templates/verify-config.php';
 
-	printf(
-		'<p><b> %1$s <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank"> %2$s </a> or <a href="https://rtcamp.com/contact/" target="_blank"> %3$s </a>.<br /><br />',
-		esc_html__( 'If you are stuck, you can use our', 'blogger-to-wordpress' ),
-		esc_html__( 'free support forum', 'blogger-to-wordpress' ),
-		esc_html__( 'hire us', 'blogger-to-wordpress' )
-	);
 	die();
 
 }
@@ -195,7 +180,7 @@ add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
  */
 function rt_get_feeds_from_blogger_to_wp() {
 
-	include_once ABSPATH . WPINC . '/feed.php';
+	require_once ABSPATH . WPINC . '/feed.php';
 
 	$rss = fetch_feed( 'https://bloggertowp.org/feed/' );
 
@@ -204,7 +189,7 @@ function rt_get_feeds_from_blogger_to_wp() {
 		$rss_items = $rss->get_items( 0, $maxitems );
 	}
 
-	include_once RT_B2WR_PLUGIN_DIR . 'templates/feeds.php';
+	require_once RT_B2WR_PLUGIN_DIR . 'templates/feeds.php';
 
 }
 
@@ -213,8 +198,8 @@ function rt_get_feeds_from_blogger_to_wp() {
  */
 function rt_blogger_to_wordpress_update_notice() {
 
-	if ( ! get_option( 'rtb2wr206' ) || '' === get_option( 'rtb2wr206' ) ) {
-		include_once RT_B2WR_PLUGIN_DIR . 'template/update-notice.php';
+	if ( empty( get_option( 'rtb2wr206' ) ) ) {
+		require_once RT_B2WR_PLUGIN_DIR . 'template/update-notice.php';
 	}
 
 }

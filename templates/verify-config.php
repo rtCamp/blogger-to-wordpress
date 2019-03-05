@@ -19,7 +19,7 @@
 	<br/>
 	<?php esc_html_e( 'Should redirect to', 'blogger-to-wordpress' ); ?>&raquo;
 	<b>
-		<a href="<?php echo esc_url( $local_url ); ?>" target="_blank"><?php echo esc_url( trim( $local_url ) ); ?></a>
+		<a href="<?php echo esc_url( $local_url ); ?>" target="_blank"><?php echo esc_url( $local_url ); ?></a>
 	</b>
 </pre>
 <p>

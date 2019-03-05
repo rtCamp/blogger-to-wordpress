@@ -2,7 +2,7 @@
 /**
  * Get config template file
  *
- * @package Blogger_To_Wordpress
+ * @package Blogger_To_WordPress
  */
 
 ?>
@@ -15,7 +15,7 @@ if ( empty( $results ) ) {
 
 	<strong>
 		<a href="<?php echo esc_url( RT_B2WR_BLOG_URL . '/wp-admin/admin.php?import=blogger' ); ?> "><?php esc_html_e( 'Import from Blogger.com', 'wordpress-to-blogger' ); ?></a>
-	</strong> 
+	</strong>
 
 	<?php esc_html_e( 'first and then "Start Configuration"', 'blogger-to-wordpress' ); ?>
 

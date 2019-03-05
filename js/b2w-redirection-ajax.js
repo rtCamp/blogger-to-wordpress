@@ -1,7 +1,7 @@
 /**
  * B2W Javascript functions.
  *
- * @package Blogger_to_Wordpress
+ * @package Blogger_To_WordPress
  */
 
 /**
@@ -12,9 +12,11 @@
  * @returns {void}
  */
 function rt_start_config( nonce ){
-	if (jQuery( '#get_config' ).html() != '') {
+
+	if ( jQuery( '#get_config' ).html() != '' ) {
 		jQuery( '#get_config' ).html( '' );
 	}
+
 	jQuery.ajax(
 		{
 			url:'admin-ajax.php',
@@ -60,16 +62,18 @@ function generate_code(num, domain_name, curr_domain, nonce){
  *
  * @returns {void}
  */
-function check_configuration(domain_name, nonce){
-	if (jQuery( '#verify_config' ).html() != '') {
+function check_configuration( domain_name, nonce ) {
+
+	if ( jQuery( '#verify_config' ).html() != '' ) {
 		jQuery( '#verify_config' ).html( '' );
 	}
+
 	jQuery.ajax(
 		{
 			url:'admin-ajax.php',
 			type: 'POST',
 			data: 'action=rt_b2wr_verify_config&dname=' + domain_name + '&config_nonce=' + nonce,
-			success: function(result){
+			success: function(result) {
 				jQuery( '#verify_config' ).append( result );
 			}
 		}
@@ -78,13 +82,15 @@ function check_configuration(domain_name, nonce){
 
 jQuery( '#hide_b2wr_notice_block' ).click(
 	function() {
+
 		const nonce = $( '#b2wr_nonce_field' ).val();
+
 		jQuery.ajax(
 			{
 				url:'admin-ajax.php',
 				type: 'POST',
 				data: 'action=rt_b2wr_hide_notice_block&update_nonce=' + nonce,
-				success: function(result){
+				success: function( result ) {
 					jQuery( '#b2wr_notice_block' ).slideUp( 'slow','linear' );
 				}
 			}
