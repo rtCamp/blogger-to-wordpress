@@ -27,7 +27,7 @@
 	<b>
 		<?php
 		echo wp_kses(
-			__( 'If you are stuck, you can use our <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank">free support forum</a> or <a href="https://rtcamp.com/contact/" target="_blank">hire us.</a>', 'blogger-to-wordpress' ),
+			__( 'If you are stuck, you can use our <a href="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" target="_blank">free support forum</a> or <a href="https://bloggertowp.org/contact-us/" target="_blank">hire us.</a>', 'blogger-to-wordpress' ),
 			array(
 				'a' => array(
 					'href'   => array(),
