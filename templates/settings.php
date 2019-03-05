@@ -10,7 +10,7 @@
 
 	<div>
 		<img id="btowp_img" alt="<?php esc_attr_e( 'B2W-Redirection', 'blogger-to-wordpress' ); ?>" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
-		<h2 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wp' ); ?></h2>
+		<h1 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wp' ); ?></h1>
 	</div>
 
 	<div class="clear"></div>
