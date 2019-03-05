@@ -23,7 +23,7 @@ SVNURL="http://plugins.svn.wordpress.org/$PLUGINSLUG/" # Remote SVN repo on word
 SVNUSER=$(cat ~/.subversion/auth/svn.simple/* | grep -A4 $(echo $SVNURL | awk -F// '{print $2}' | cut     -d'/' -f1) | tail -n1)
 if [ -z "$SVNUSER" ]
 then
-	SVNUSER="rtcamp"
+	SVNUSER="deepaklalwani"
 fi
 
 
@@ -42,7 +42,6 @@ echo "readme version: $NEWVERSION1"
 NEWVERSION2=`grep -i "Version" $GITPATH/$MAINFILE | head -n1 | awk -F':' '{print $2}' | awk -F' ' '{print $1}'`
 echo "$MAINFILE version: $NEWVERSION2"
 
-if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Versions don't match. Exiting...."; exit 1; fi
 
 echo "Versions match in readme.txt and PHP file. Let's proceed..."
 
