@@ -1,6 +1,10 @@
 # Blogger To WordPress
 
-![Blogger to WordPress Redirection](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
+<a href="https://rtcamp.com/?utm_source=github&utm_medium=readme" rel="nofollow"><img src="https://rtcamp.com/wp-content/uploads/2019/04/github-banner@2x.png" alt="Handcrafted Enterprise WordPress Solutions by rtCamp" /></a>
+
+<p align="center">
+    <img src="https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg" alt="Blogger to WordPress Redirection">
+</p>
 
 * **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit),[saurabhshukla](http://profiles.wordpress.org/saurabhshukla),[faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/)
 
