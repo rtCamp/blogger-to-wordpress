@@ -8,7 +8,7 @@
  * Author URI: https://rtcamp.com/
  * Requires at least: 3.2
  * Tested up to: 5.1
- * Text Domain: blogger-to-wordpress
+ * Text Domain: blogger-to-wordpress-redirection
  *
  * @package Blogger_To_WordPress
  */
@@ -22,7 +22,7 @@ define( 'RT_B2WR_BLOG_URL', get_bloginfo( 'url' ) );
  */
 function rt_blogger_to_wordpress_add_option() {
 
-	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress' ), 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
+	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
 
 	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', ( RT_B2WR_PLUGIN_URL . 'js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), filemtime( RT_B2WR_PLUGIN_DIR . 'js/b2w-redirection-ajax.js' ), true );
 

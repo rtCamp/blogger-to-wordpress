@@ -9,7 +9,7 @@
 <div class="wrap">
 
 	<div>
-		<img id="btowp_img" alt="<?php esc_attr_e( 'B2W-Redirection', 'blogger-to-wordpress' ); ?>" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
+		<img id="btowp_img" alt="<?php esc_attr_e( 'B2W-Redirection', 'blogger-to-wordpress-redirection' ); ?>" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
 		<h1 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wp' ); ?></h1>
 	</div>
 
@@ -31,7 +31,7 @@
 			<p>
 				<?php
 				echo wp_kses(
-					__( 'Please keep this plugin <strong>activated</strong> for redirection to work.', 'blogger-to-wordpress' ),
+					__( 'Please keep this plugin <strong>activated</strong> for redirection to work.', 'blogger-to-wordpress-redirection' ),
 					array(
 						'strong' => array(),
 					)
@@ -42,19 +42,19 @@
 
 		<h3>
 			<u>
-				<?php esc_html_e( 'Start Configuration', 'blogger-to-wordpress' ); ?>
+				<?php esc_html_e( 'Start Configuration', 'blogger-to-wordpress-redirection' ); ?>
 			</u>
 		</h3>
 
 		<h4>
-			<?php esc_html_e( 'Press "Start Configuration" button to generate code for Blogger.com blog', 'blogger-to-wordpress' ); ?>
+			<?php esc_html_e( 'Press "Start Configuration" button to generate code for Blogger.com blog', 'blogger-to-wordpress-redirection' ); ?>
 		</h4>
 
 		<p>
-			<?php esc_html_e( 'Plugin will automatically detect Blogger.com blog from where you have imported.', 'blogger-to-wordpress' ); ?>
+			<?php esc_html_e( 'Plugin will automatically detect Blogger.com blog from where you have imported.', 'blogger-to-wordpress-redirection' ); ?>
 		</p>
 
-		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress' ); ?>" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
+		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress-redirection' ); ?>" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
 
 		<p id="get_config" class="clear"></p>
 	</div>
@@ -63,21 +63,21 @@
 		<div class="postbox-container">
 			<div class="meta-box-sortables ui-sortable">
 				<div class="postbox" id="social">
-					<div title="<?php esc_attr_e( 'Click to toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to toggle', 'blogger-to-wordpress-redirection' ); ?>" class="handlediv"><br></div>
 
-					<h3 class="hndle"><span><strong><?php esc_html_e( 'Getting Social is Good', 'blogger-to-wordpress' ); ?></strong></span></h3>
+					<h3 class="hndle"><span><strong><?php esc_html_e( 'Getting Social is Good', 'blogger-to-wordpress-redirection' ); ?></strong></span></h3>
 
 					<div class="inside" style="text-align:center;">
-						<a href="https://www.facebook.com/rtCamp.solutions" target="_blank" title="<?php esc_attr_e( 'Become a fan on Facebook', 'blogger-to-wordpress' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/facebook.png" alt="<?php esc_attr_e( 'Twitter', 'blogger-to-wordpress' ); ?>" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="https://twitter.com/rtcamp" target="_blank" title="<?php esc_attr_e( 'Follow us on Twitter', 'blogger-to-wordpress' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/twitter.png" alt="<?php esc_attr_e( 'Facebook', 'blogger-to-wordpress' ); ?>" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="https://feeds.feedburner.com/rtcamp" target="_blank" title=" <?php esc_attr_e( 'Subscribe to our feeds', 'blogger-to-wordpress' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/rss.png" alt="<?php esc_attr_e( 'RSS Feeds', 'blogger-to-wordpress' ); ?>" /></a>
+						<a href="https://www.facebook.com/rtCamp.solutions" target="_blank" title="<?php esc_attr_e( 'Become a fan on Facebook', 'blogger-to-wordpress-redirection' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/facebook.png" alt="<?php esc_attr_e( 'Twitter', 'blogger-to-wordpress-redirection' ); ?>" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="https://twitter.com/rtcamp" target="_blank" title="<?php esc_attr_e( 'Follow us on Twitter', 'blogger-to-wordpress-redirection' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/twitter.png" alt="<?php esc_attr_e( 'Facebook', 'blogger-to-wordpress-redirection' ); ?>" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="https://feeds.feedburner.com/rtcamp" target="_blank" title=" <?php esc_attr_e( 'Subscribe to our feeds', 'blogger-to-wordpress-redirection' ); ?>"><img src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/rss.png" alt="<?php esc_attr_e( 'RSS Feeds', 'blogger-to-wordpress-redirection' ); ?>" /></a>
 					</div>
 				</div>
 
 				<div class="postbox" id="joinfb">
-					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress-redirection' ); ?>" class="handlediv"><br></div>
 
-					<h3 class="hndle"><span><strong><?php esc_html_e( 'Join Us on Facebook', 'blogger-to-wordpress' ); ?></strong></span></h3>
+					<h3 class="hndle"><span><strong><?php esc_html_e( 'Join Us on Facebook', 'blogger-to-wordpress-redirection' ); ?></strong></span></h3>
 
 					<div class="inside" style="text-align:center;">
 						<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FrtCamp.solutions&amp;width=242&amp;height=182&amp;connections=4&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:242px; height:182px"></iframe>
@@ -85,13 +85,13 @@
 				</div>
 
 				<div class="postbox" id="donations">
-					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress-redirection' ); ?>" class="handlediv"><br></div>
 
-					<h3 class="hndle"><span><strong> <?php esc_html_e( 'Promote, Donate, Share...', 'blogger-to-wordpress' ); ?></strong></span></h3>
+					<h3 class="hndle"><span><strong> <?php esc_html_e( 'Promote, Donate, Share...', 'blogger-to-wordpress-redirection' ); ?></strong></span></h3>
 
 					<div class="inside">
 
-						<?php esc_html_e( 'A lot of time and effort goes into the development of this plugin. If you find it useful, please consider making a donation, or a review on your blog or sharing this with your friends to help us.', 'blogger-to-wordpress' ); ?><br/><br/>
+						<?php esc_html_e( 'A lot of time and effort goes into the development of this plugin. If you find it useful, please consider making a donation, or a review on your blog or sharing this with your friends to help us.', 'blogger-to-wordpress-redirection' ); ?><br/><br/>
 
 						<div class="rt-paypal" style="text-align:center">
 							<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -102,7 +102,7 @@
 								<input type="hidden" name="no_note" value="0">
 								<input type="hidden" name="currency_code" value="USD">
 								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-								<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="<?php esc_attr_e( 'PayPal - The safer, easier way to pay online!', 'blogger-to-wordpress' ); ?>">
+								<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="<?php esc_attr_e( 'PayPal - The safer, easier way to pay online!', 'blogger-to-wordpress-redirection' ); ?>">
 								<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 							</form>
 						</div>
@@ -113,7 +113,7 @@
 							</div>
 
 							<div class="rt-twitter" style="">
-								<a href="https://twitter.com/share"  class="twitter-share-button" data-text="<?php esc_attr_e( 'Blogger to WordPress Redirection Plugin', 'blogger-to-wordpress' ); ?>"  data-url="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp"><?php esc_html_e( 'Tweet', 'blogger-to-wordpress' ); ?></a>
+								<a href="https://twitter.com/share"  class="twitter-share-button" data-text="<?php esc_attr_e( 'Blogger to WordPress Redirection Plugin', 'blogger-to-wordpress-redirection' ); ?>"  data-url="https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/" data-count="vertical" data-via="bloggertowp"><?php esc_html_e( 'Tweet', 'blogger-to-wordpress-redirection' ); ?></a>
 							</div>
 
 							<div class="clear"></div>
@@ -123,14 +123,14 @@
 				</div>
 
 				<div class="postbox" id="support">
-					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress-redirection' ); ?>" class="handlediv"><br></div>
 
-					<h3 class="hndle"><span><strong><?php esc_html_e( 'Free Support', 'blogger-to-wordpress' ); ?></strong></span></h3>
+					<h3 class="hndle"><span><strong><?php esc_html_e( 'Free Support', 'blogger-to-wordpress-redirection' ); ?></strong></span></h3>
 
 					<div class="inside">
 						<?php
 						echo wp_kses(
-							__( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.', 'blogger-to-wordpress' ),
+							__( 'If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href="https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/" target="_blank" title="Blogger to WordPress Support Forum">support forums</a>.', 'blogger-to-wordpress-redirection' ),
 							array(
 								'a' => array(
 									'href'  => array(),
@@ -143,9 +143,9 @@
 				</div>
 
 				<div class="postbox" id="latest_news">
-					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress' ); ?>" class="handlediv"><br></div>
+					<div title="<?php esc_attr_e( 'Click to Toggle', 'blogger-to-wordpress-redirection' ); ?>" class="handlediv"><br></div>
 
-					<h3 class="hndle"><span><strong><?php esc_html_e( 'Latest News from Our Blog', 'blogger-to-wordpress' ); ?></strong></span></h3>
+					<h3 class="hndle"><span><strong><?php esc_html_e( 'Latest News from Our Blog', 'blogger-to-wordpress-redirection' ); ?></strong></span></h3>
 
 					<div class="inside">
 						<?php rt_get_feeds_from_blogger_to_wp(); ?>
