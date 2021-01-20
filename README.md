@@ -2,7 +2,7 @@
 
 ![Blogger to WordPress Redirection](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
 
-* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit),[saurabhshukla](http://profiles.wordpress.org/saurabhshukla),[faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/)
+* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/)
 
 * **License:** [GPL v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -22,8 +22,8 @@ You may also consider using our [Blogger To WordPress Migration Service](https:/
 ### New Features
 
 * Zero changes requires on WordPress end. Plugin handles everything automatically.
-* New configuration wizard help you setup redirection without much efforts.
-* Supports importing from multiple Blogger.com blog
+* New configuration wizard help you setup redirection without many efforts.
+* Supports importing from a multiple Blogger.com blog
 * Supports rel####canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
 **Link - [Installation & Setup Guide](https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/)**
@@ -46,6 +46,14 @@ If you have used any other way to import your posts from Blogger.com, this plugi
 Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/) for some help.
 
 ## Changelog
+
+### 2.2.8
+
+* Update Text Domain.
+
+### 2.2.7
+
+* Compatible with WordPress 5.6
 
 ### 2.2.6
 
@@ -87,10 +95,9 @@ New features added:
 
 ## Upgrade Notice
 
-### 2.2.6
+### 2.2.8
 
-* Compatible with WordPress 5.1
-* Code improvements.
+* Update Text Domain.
 
 ## Does this interest you?
 
