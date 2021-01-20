@@ -1,9 +1,9 @@
 === Blogger To WordPress ===
-Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri, deepaklalwani
+Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri, deepaklalwani, vaishu.agola27
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 5.1
-Stable tag: 2.2.6
+Tested up to: 5.6
+Stable tag: 2.2.8
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,14 @@ Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-re
 
 == Changelog ==
 
+= 2.2.8 =
+
+* Update Text Domain.
+
+= 2.2.7 =
+
+* Compatible with WordPress 5.6
+
 = 2.2.6 =
 
 * Compatible with WordPress 5.1
@@ -88,7 +96,6 @@ New features added:
 
 == Upgrade Notice ==
 
-= 2.2.6 =
+= 2.2.8 =
 
-* Compatible with WordPress 5.1
-* Code improvements.
+* Update Text Domain.
