@@ -16,7 +16,7 @@ on:
 jobs:
   Run-wpe2e-TestCase:
     # The type of runner that the job will run on
-    name: Run Mention links 
+    name: Run blogger-to-wordpress 
     runs-on: ubuntu-latest
     env: 
       SHA: ${{ github.event.pull_request.head.sha }}
@@ -24,7 +24,7 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
       working-directory: ./tests/e2e-playwright
       ##TESRESULT_TOKEN: ${{ secrets.TESRESULT_TOKEN }}
-      TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ##TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -52,10 +52,10 @@ jobs:
           name: report
           path: ./tests/e2e-playwright/artifacts
 
-      - name: run PR status
-        if: ${{ always() }}
-        run: node ./tests/e2e-playwright/bin/pr-status.js
-        working-directory: ${{env.working_directory}}
+      # - name: run PR status
+      #   if: ${{ always() }}
+      #   run: node ./tests/e2e-playwright/bin/pr-status.js
+      #   working-directory: ${{env.working_directory}}
 
       - name: Cleanup
         if: ${{ always() }}

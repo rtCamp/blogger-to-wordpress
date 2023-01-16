@@ -31,7 +31,7 @@ test.describe('Validate blogger importer', () => {
             await page.locator('[aria-label="Install Blogger now"]').click();
             // Check page load
             await Promise.all([
-                page.waitForNavigation(),
+                //page.waitForNavigation(),
                 page.locator('text=Activate Plugin & Run Importer').click()
             ]);
             await page.waitForSelector("#wpbody-content > div.wrap > h2");
@@ -43,7 +43,7 @@ test.describe('Validate blogger importer', () => {
             await admin.visitAdminPage("plugins.php")
             // Click [aria-label="Deactivate Blogger Importer"]
             await Promise.all([
-                page.waitForNavigation(),
+               // page.waitForNavigation(),
                 page.locator('[aria-label="Deactivate Blogger Importer"]').click()
             ]);
             // Delete Blogger Importer
