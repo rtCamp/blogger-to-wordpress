@@ -32,13 +32,12 @@ test.describe('Validate blogger importer', () => {
             // Check page load
             await Promise.all([
                 page.waitForNavigation(),
-                //page.locator('text=Activate Plugin & Run Importer').click()
                 page.locator('[aria-label="Run Blogger Importer"]').click()
+
             ]);
             await page.waitForSelector("#wpbody-content > div.wrap > h2");
             // Validate upload button
             await expect(page.locator("#upload")).toBeVisible();
-            
             // Reset Settings
             // Goto Plugins Page
             await admin.visitAdminPage("plugins.php")

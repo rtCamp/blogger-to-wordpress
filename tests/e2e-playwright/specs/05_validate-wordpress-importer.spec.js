@@ -33,7 +33,7 @@ test.describe('Validate WordPress Importer', () => {
             await Promise.all([
                 page.waitForNavigation(),
                 //page.locator('text=Activate Plugin & Run Importer').click()
-                page.locator('[aria-label="Run Blogger Importer"]').click()
+                page.locator('[aria-label="Run WordPress Importer"]').click()
             ]);
             // Validate WordPress Importer
             await page.waitForSelector("#wpbody-content > div.wrap > h2");

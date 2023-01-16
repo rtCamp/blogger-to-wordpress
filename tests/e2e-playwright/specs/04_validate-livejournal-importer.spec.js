@@ -33,7 +33,7 @@ test.describe('Validate Live Journal Importer', () => {
             await Promise.all([
                 page.waitForNavigation(),
                 //page.locator('text=Activate Plugin & Run Importer').click()
-                page.locator('[aria-label="Run Blogger Importer"]').click()
+                page.locator('[aria-label="Run LiveJournal Importer"]').click()
             ]);
             // Validate live journal page
             await expect(page.locator('label:has-text("LiveJournal Username")')).toBeVisible();
