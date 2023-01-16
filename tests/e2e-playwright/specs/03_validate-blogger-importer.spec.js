@@ -22,8 +22,7 @@ test.describe('Validate blogger importer', () => {
         const buttonLink = await page.locator("#get_config > strong");
         await buttonLink.click();
         // Check For page load
-        await page.waitForSelector("#wpbody-content > div.wrap > h1");
-        await page.focus("#wpbody-content > div.wrap > h1");
+        await page.locator("#wpbody-content > div.wrap > h1").first();
         // Check for blogger import
         const tweets = await page.locator("tr:nth-child(1) > td.import-system > span.importer-action > a").first();
         const getText = await tweets.evaluate(node => node.innerText);
@@ -38,6 +37,7 @@ test.describe('Validate blogger importer', () => {
             await page.waitForSelector("#wpbody-content > div.wrap > h2");
             // Validate upload button
             await expect(page.locator("#upload")).toBeVisible();
+            
             // Reset Settings
             // Goto Plugins Page
             await admin.visitAdminPage("plugins.php")

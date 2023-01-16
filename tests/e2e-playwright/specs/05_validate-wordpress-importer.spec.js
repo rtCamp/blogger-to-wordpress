@@ -22,8 +22,7 @@ test.describe('Validate WordPress Importer', () => {
         const buttonLink = await page.locator("#get_config > strong");
         await buttonLink.click();
         // Check For page load
-        await page.waitForSelector("#wpbody-content > div.wrap > h1");
-        await page.focus("#wpbody-content > div.wrap > h1");
+        await page.locator("#wpbody-content > div.wrap > h1").first();
         // Check for Live Journal
         const tweets = await page.locator("tr:nth-child(7) > td.import-system > span.importer-action > a").first();
         const getText = await tweets.evaluate(node => node.innerText);

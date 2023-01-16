@@ -18,13 +18,7 @@ test.describe('Validate Start options are visible', () => {
         await page.focus("#content_block > h3 > u");
         await page.locator("#start_config").click();
         // check For message is appearing
-        const msg = await page.locator("#error_msg").isVisible();
-        if (msg) {
-            console.log("Configure button is functional")
-        }
-        else {
-            console.log("Configure button is not working")
-        }
+        await expect(page.locator("#error_msg").first()).toContainText("Sorry… No posts found that were imported from a Blogger.com blog")
 
     });
 
