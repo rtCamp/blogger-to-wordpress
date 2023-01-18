@@ -63,7 +63,5 @@ test.describe('Upload xml blogger importer', () => {
             page.on('dialog', dialog => dialog.accept());
             await page.locator('[aria-label="Delete Blogger Importer"]').click();
         }
-    
     });
-
 });

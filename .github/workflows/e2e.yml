@@ -1,7 +1,5 @@
 # e2e test for Blogger to Wordpress
-
 name: CI for Blogger to Wordpress
-
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
