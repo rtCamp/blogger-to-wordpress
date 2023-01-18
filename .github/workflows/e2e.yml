@@ -7,10 +7,10 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: 
-      - automation/playwright
+      - master
   pull_request:
     branches: 
-      - automation/playwright
+      - master
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
@@ -23,9 +23,7 @@ jobs:
       COMMIT_SHA: ${{ github.sha }}
       PR_NUMBER: ${{ github.event.pull_request.number }}
       working-directory: ./tests/e2e-playwright
-      ##TESRESULT_TOKEN: ${{ secrets.TESRESULT_TOKEN }}
-      ##TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
      
@@ -52,10 +50,7 @@ jobs:
           name: report
           path: ./tests/e2e-playwright/artifacts
 
-      # - name: run PR status
-      #   if: ${{ always() }}
-      #   run: node ./tests/e2e-playwright/bin/pr-status.js
-      #   working-directory: ${{env.working_directory}}
+    
 
       - name: Cleanup
         if: ${{ always() }}

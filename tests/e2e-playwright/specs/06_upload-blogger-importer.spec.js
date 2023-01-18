@@ -7,7 +7,6 @@ test.describe('Upload xml blogger importer', () => {
     test.beforeEach(async ({ admin }) => {
         await admin.visitAdminPage('tools.php');
     });
-
     test('Check upload functionality blogger importer', async ({ admin, page }) => {
         // Generic Check For Activity Tab for ensuring better page loading 
         await page.waitForSelector("#wpbody-content > div.wrap > h1");
