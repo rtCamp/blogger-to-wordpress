@@ -47,9 +47,7 @@ jobs:
         with:
           name: report
           path: ./tests/e2e-playwright/artifacts
-
-    
-
+          
       - name: Cleanup
         if: ${{ always() }}
         uses: rtCamp/action-cleanup@master
