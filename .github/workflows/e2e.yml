@@ -15,7 +15,7 @@ jobs:
   Run-wpe2e-TestCase:
     # The type of runner that the job will run on
     name: Run blogger-to-wordpress 
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, rt.gw]
     env: 
       SHA: ${{ github.event.pull_request.head.sha }}
       COMMIT_SHA: ${{ github.sha }}
@@ -47,7 +47,7 @@ jobs:
         with:
           name: report
           path: ./tests/e2e-playwright/artifacts
-          
+
       - name: Cleanup
         if: ${{ always() }}
         uses: rtCamp/action-cleanup@master
