@@ -15,7 +15,7 @@ jobs:
   Run-wpe2e-TestCase:
     # The type of runner that the job will run on
     name: Run blogger-to-wordpress 
-    runs-on: [self-hosted, rt.gw]
+    runs-on: ubuntu-latest
     env: 
       SHA: ${{ github.event.pull_request.head.sha }}
       COMMIT_SHA: ${{ github.sha }}
