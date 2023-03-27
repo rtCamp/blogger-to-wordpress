@@ -1,5 +1,5 @@
 # e2e test for Blogger to Wordpress
-name: CI for Blogger to Wordpress
+name: End-to-End Tests
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -14,7 +14,7 @@ on:
 jobs:
   Run-wpe2e-TestCase:
     # The type of runner that the job will run on
-    name: Run blogger-to-wordpress 
+    name: Playwright tests  
     runs-on: ubuntu-latest
     env: 
       SHA: ${{ github.event.pull_request.head.sha }}
