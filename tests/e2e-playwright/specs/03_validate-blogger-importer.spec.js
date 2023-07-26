@@ -7,7 +7,7 @@ const { CommonFunction } = require( '../page/Functions.js' );
 
 test.describe('Validate blogger importer', () => {
 
-    test('Check Start Configuration and blogger importer', async ({ admin, page }) => {
+    test('Check Start Configuration and blogger importer', async ( { admin,page } ) => {
         await admin.visitAdminPage('tools.php');
         const CommonFunctionobj = new CommonFunction(page);
         await CommonFunctionobj.navigateToBloggerPage(selectors.toolsHeading, selectors.bloggerToWordpressLink, selectors.bloggertoWordressHeading, selectors.urltoValidate);

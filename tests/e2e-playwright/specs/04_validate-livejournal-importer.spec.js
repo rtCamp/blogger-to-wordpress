@@ -1,9 +1,9 @@
 /**
  * WordPress dependencies
  */
-const { test } = require('@wordpress/e2e-test-utils-playwright');
-const { selectors } = require('../utils/selectors');
-const { CommonFunction } = require('../page/Functions.js');
+const { test } = require( '@wordpress/e2e-test-utils-playwright' );
+const { selectors } = require( '../utils/selectors' );
+const { CommonFunction } = require( '../page/Functions.js' );
 
 test.describe('Validate Live Journal Importer', () => {
     test('Check Start Configuration and Live Journal', async ({ admin, page }) => {

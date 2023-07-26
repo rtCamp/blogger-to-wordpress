@@ -1,14 +1,14 @@
 /**
  * WordPress dependencies
  */
-const { test } = require('@wordpress/e2e-test-utils-playwright');
-const { selectors } = require('../utils/selectors');
-const { CommonFunction } = require('../page/Functions.js');
+const { test } = require( '@wordpress/e2e-test-utils-playwright' );
+const { selectors } = require( '../utils/selectors' );
+const { CommonFunction } = require( '../page/Functions.js' );
 
 test.describe('Validate WordPress Importer', () => {
    
 
-    test('Check Start Configuration and WordPress importer', async ({ admin, page }) => {
+    test('Check Start Configuration and WordPress importer', async ( { admin, page } ) => {
         await admin.visitAdminPage('tools.php');
         const CommonFunctionobj = new CommonFunction(page);
         await CommonFunctionobj.navigateToBloggerPage(selectors.toolsHeading, selectors.bloggerToWordpressLink, selectors.bloggertoWordressHeading, selectors.urltoValidate);
