@@ -11,17 +11,17 @@
      path.join( process.cwd(), 'artifacts/storage-states/admin.json' );
  
  const config: PlaywrightTestConfig = {
-    //  reporter: [
-    //      ["html", { open: "never" }],
-    //      ["junit", { outputFile: "playwright-report/results.xml" }],
-    //      [
-    //          "playwright-tesults-reporter",
-    //          { "tesults-target": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU5OGQyZThlLTU4NjQtNDhjNi04YzJhLWIwY2FhMzIwMmFhYy0xNjcyMTc3Mzg4NzExIiwiZXhwIjo0MTAyNDQ0ODAwMDAwLCJ2ZXIiOiIwIiwic2VzIjoiNDVkNTEyN2ItOGI5OS00ZjIzLWI1NGUtMTJmMjE4ZjFkMzQ0IiwidHlwZSI6InQifQ.fdvlnQ5E0HG_nupWdZN4VqRnt22gbut31azK0wCmwpc" },
-    //      ],
-    //  ],
-     reporter: process.env.CI
-        ? [['github'], ['./config/flaky-tests-reporter.ts']]
-        : 'list',
+     reporter: [
+         ["html", { open: "never" }],
+         ["junit", { outputFile: "playwright-report/results.xml" }],
+         [
+             "playwright-tesults-reporter",
+             { "tesults-target": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU5OGQyZThlLTU4NjQtNDhjNi04YzJhLWIwY2FhMzIwMmFhYy0xNjcyMTc3Mzg4NzExIiwiZXhwIjo0MTAyNDQ0ODAwMDAwLCJ2ZXIiOiIwIiwic2VzIjoiNDVkNTEyN2ItOGI5OS00ZjIzLWI1NGUtMTJmMjE4ZjFkMzQ0IiwidHlwZSI6InQifQ.fdvlnQ5E0HG_nupWdZN4VqRnt22gbut31azK0wCmwpc" },
+         ],
+     ],
+    //  reporter: process.env.CI
+    //     ? [['github'], ['./config/flaky-tests-reporter.ts']]
+    //     : 'list',
      forbidOnly: !! process.env.CI,
      workers: 1,
      retries: process.env.CI ? 2 : 0,
