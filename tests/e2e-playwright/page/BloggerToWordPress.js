@@ -1,12 +1,13 @@
 const { expect } =require ("@playwright/test");
 const {selectors} =require('../utils/selectors')
-exports.CommonFunction = class CommonFunction {
+exports.BloggerToWordPress = class BloggerToWordPress {
     constructor(page) {
         this.page = page
     }
 
     //  This function is used to navigate to the blogger to WordPress page
     async navigateToBloggerPage(heading, bloggerToWordpressLink, bloggertoWordressHeading, validateURL) {
+        await this.page.goto('./wp-admin/tools.php', { waitUntil: 'load'});
         await this.page.waitForSelector(heading);
         await this.page.focus(bloggerToWordpressLink);
         // Click The link and check for page URL
@@ -36,6 +37,7 @@ exports.CommonFunction = class CommonFunction {
         const tweets = await this.page.locator(importLink).first().innerText();
         if (tweets == 'Install Now') {
             await this.page.locator(installItem).click();
+            await this.page.locator(runItem).isVisible();
             // Check page load
             await Promise.all([
                 this.page.locator(runItem).click()
@@ -64,6 +66,7 @@ exports.CommonFunction = class CommonFunction {
         const tweets = await this.page.locator(importLink).first().innerText();
         if (tweets == 'Install Now') {
             await this.page.locator(installItem).click();
+            await this.page.locator(runItem).isVisible();
             // Check page load
             await Promise.all([
                 this.page.locator(runItem).click()
