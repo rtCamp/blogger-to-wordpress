@@ -1,9 +1,9 @@
 === Blogger To WordPress ===
-Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri, deepaklalwani, vaishu.agola27
+Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri, deepaklalwani, vaishu.agola27, nikhiljoshua
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 5.8.1
-Stable tag: 2.2.8
+Tested up to: 6.3
+Stable tag: 2.2.9
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,10 @@ If you have used any other way to import your posts from Blogger.com, this plugi
 Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/) for some help.
 
 == Changelog ==
+
+= 2.2.9 =
+
+* Blogger to WordPress Redirection 2.2.9 with WordPress 6.3 compatibility and some minor fixes.
 
 = 2.2.8 =
 
@@ -95,6 +99,10 @@ New features added:
 * Supports rel=canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
 == Upgrade Notice ==
+
+= 2.2.9 =
+
+* Blogger to WordPress Redirection 2.2.9 with WordPress 6.3 compatibility and some minor fixes.
 
 = 2.2.8 =
 
