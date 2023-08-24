@@ -7,7 +7,7 @@
  * Author: rtCamp
  * Author URI: https://rtcamp.com/
  * Requires at least: 3.2
- * Tested up to: 5.6
+ * Tested up to: 6.3
  * Text Domain: blogger-to-wordpress-redirection
  *
  * @package Blogger_To_WordPress

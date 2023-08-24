@@ -51,6 +51,7 @@ Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-re
 = 2.2.9 =
 
 * Remove loading of unavailable script.
+* Compatible with WordPress 6.3.
 
 = 2.2.8 =
 
@@ -103,6 +104,8 @@ New features added:
 = 2.2.9 =
 
 * Remove loading of unavailable script.
+
+* Compatible with WordPress 6.3.
 
 = 2.2.8 =
 
