@@ -31,7 +31,7 @@ function rt_blogger_to_wordpress_add_option() {
 
 	wp_enqueue_style( 'rt-blogger-to-wordpress-redirection-css', ( RT_B2WR_PLUGIN_URL . 'css/b2w-redirection.css' ), array(), filemtime( RT_B2WR_PLUGIN_DIR . 'css/b2w-redirection.css' ) );
 
-	$page = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_STRING );
+	$page = filter_input( INPUT_GET, 'page', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 
 	if ( ! empty( $page ) && 'rt-blogger-to-wordpress-redirection' === $page ) {
 
@@ -88,7 +88,7 @@ function rt_blogger_to_wordpress_redirection() {
 
 	global $wpdb;
 
-	$b2w = filter_input( INPUT_GET, 'b2w', FILTER_SANITIZE_STRING );
+	$b2w = filter_input( INPUT_GET, 'b2w', FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 	$b2w = ( ! empty( $b2w ) ) ? $b2w : false;
 
 	if ( false === $b2w ) {
