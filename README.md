@@ -2,7 +2,7 @@
 
 ![Blogger to WordPress Redirection](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
 
-* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/)
+* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/), [Pavan Patil](https://profiles.wordpress.org/pavanpatil1/)
 
 * **License:** [GPL v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
