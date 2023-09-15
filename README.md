@@ -103,7 +103,7 @@ New features added:
 
 ## Upgrade Notice
 
-## 2.3.0
+### 2.3.0
 
 * Blogger to WordPress Redirection 2.3.0 with PHP 8.1 Compatibility.
 
