@@ -2,7 +2,7 @@
 
 ![Blogger to WordPress Redirection](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
 
-* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/)
+* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/), [Pavan Patil](https://profiles.wordpress.org/pavanpatil1/)
 
 * **License:** [GPL v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -46,6 +46,10 @@ If you have used any other way to import your posts from Blogger.com, this plugi
 Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/) for some help.
 
 ## Changelog
+
+### 2.3.0
+
+* Blogger to WordPress Redirection 2.3.0 with PHP 8.1 Compatibility.
 
 ### 2.2.9
 
@@ -99,13 +103,13 @@ New features added:
 
 ## Upgrade Notice
 
+### 2.3.0
+
+* Blogger to WordPress Redirection 2.3.0 with PHP 8.1 Compatibility.
+
 ### 2.2.9
 
 * Blogger to WordPress Redirection 2.2.9 with WordPress 6.3 compatibility and some minor fixes.
-
-### 2.2.8
-
-* Update Text Domain.
 
 ## Does this interest you?
 

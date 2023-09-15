@@ -48,6 +48,10 @@ Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-re
 
 == Changelog ==
 
+= 2.3.0 =
+
+* Blogger to WordPress Redirection 2.3.0 with PHP 8.1 compatibility.
+
 = 2.2.9 =
 
 * Blogger to WordPress Redirection 2.2.9 with WordPress 6.3 compatibility and some minor fixes.
@@ -100,10 +104,11 @@ New features added:
 
 == Upgrade Notice ==
 
+= 2.3.0 =
+
+* Blogger to WordPress Redirection 2.3.0 with PHP 8.1 compatibility.
+
 = 2.2.9 =
 
 * Blogger to WordPress Redirection 2.2.9 with WordPress 6.3 compatibility and some minor fixes.
 
-= 2.2.8 =
-
-* Update Text Domain.
