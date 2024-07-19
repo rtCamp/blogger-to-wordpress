@@ -131,11 +131,9 @@ function rt_blogger_to_wordpress_redirection(): void {
 			wp_redirect( get_permalink( $wpurl[0][0] ) ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
 
 			exit;
-		} else {
-			wp_safe_redirect( home_url(), 301 );
-			exit;
 		}
 	}
+	wp_safe_redirect( home_url(), 301 );
 }
 
 add_action( 'init', 'rt_blogger_to_wordpress_redirection' );
