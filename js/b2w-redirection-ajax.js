@@ -40,7 +40,14 @@ function rt_start_config( nonce ){
 function generate_code( domain_name, curr_domain, nonce){
 
 	jQuery( '#code_here' ).show();
-	var response = jQuery( '#code_here' ).html();
+	let originalHtml = jQuery('#code_here').data('original-html');
+
+	if (!originalHtml) {
+		originalHtml = jQuery('#code_here').html();
+        jQuery('#code_here').data('original-html', originalHtml);
+	}
+
+	let response = originalHtml;
 	response = response.replace( /{{curr_domain}}/g, curr_domain );
 	response = response.replace( /{{domain_name}}/g, domain_name );
 	response = response.replace( /{{nonce}}/g, nonce );
