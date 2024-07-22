@@ -18,9 +18,11 @@ define( 'RT_B2WR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RT_B2WR_BLOG_URL', get_bloginfo( 'url' ) );
 
 /**
- *  Add option to Tools Menu
+ * Add option to Tools Menu
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_add_option() {
+function rt_blogger_to_wordpress_add_option(): void {
 
 	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), 'manage_options', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
 
@@ -45,16 +47,20 @@ add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
 
 /**
  * Administrative Page - Begin
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_administrative_page() {
+function rt_blogger_to_wordpress_administrative_page(): void {
 
 	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
 }
 
 /**
  * Get Configuration, called via AJAX
+ *
+ * @return void
  */
-function rt_b2wr_get_config() {
+function rt_b2wr_get_config(): void {
 
 	global $wpdb;
 
@@ -78,9 +84,11 @@ function rt_b2wr_get_config() {
 add_action( 'wp_ajax_rt_b2wr_get_config', 'rt_b2wr_get_config' );
 
 /**
- *  Redirection Function (!important)
+ * Redirection Function (!important)
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_redirection() {
+function rt_blogger_to_wordpress_redirection(): void {
 
 	global $wpdb;
 
@@ -133,9 +141,11 @@ function rt_blogger_to_wordpress_redirection() {
 add_action( 'init', 'rt_blogger_to_wordpress_redirection' );
 
 /**
- *  Verify Configuration
+ * Verify Configuration
+ *
+ * @return void
  */
-function rt_b2wr_verify_config() {
+function rt_b2wr_verify_config(): void {
 
 	global $wpdb;
 
@@ -170,8 +180,10 @@ add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
 
 /**
  * Get Latest Feeds - Begin
+ *
+ * @return void
  */
-function rt_get_feeds_from_blogger_to_wp() {
+function rt_get_feeds_from_blogger_to_wp(): void {
 
 	require_once ABSPATH . WPINC . '/feed.php';
 
@@ -187,8 +199,10 @@ function rt_get_feeds_from_blogger_to_wp() {
 
 /**
  * Update Notice - Begin
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_update_notice() {
+function rt_blogger_to_wordpress_update_notice(): void {
 
 	if ( empty( get_option( 'rtb2wr206' ) ) ) {
 		require_once RT_B2WR_PLUGIN_DIR . 'template/update-notice.php';
@@ -197,8 +211,10 @@ function rt_blogger_to_wordpress_update_notice() {
 
 /**
  * Hide Notice block
+ *
+ * @return void
  */
-function rt_b2wr_hide_notice_block() {
+function rt_b2wr_hide_notice_block(): void {
 
 	if ( ! isset( $_POST['update_nonce'] )
 	|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['update_nonce'] ) ), 'b2w_update_nonce' )
