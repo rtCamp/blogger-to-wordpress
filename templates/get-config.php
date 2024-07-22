@@ -25,7 +25,7 @@ if ( empty( $results ) ) {
 ?>
 	<br/>
 
-	<h3><u> <?php printf( '%1$s', esc_html__( 'List of Blogs' ) ); ?> </u></h3>
+	<h3><u> <?php printf( '%1$s', esc_html__( 'List of Blogs', 'blogger-to-wordpress-redirection' ) ); ?> </u></h3>
 
 	<?php
 		printf(
@@ -54,7 +54,7 @@ if ( empty( $results ) ) {
 			<tr>
 				<td width="15px"><?php echo esc_html( $site_no ); ?></td>
 				<td><b><?php echo esc_html( $result->meta_value ); ?> </b></td>
-				<td  width="75px"><input type="submit" class="button" onclick = "generate_code(<?php echo sprintf( '\'%1$s\',\'%2$s\',\'%3$s\'', esc_js( $result->meta_value ), esc_js( RT_B2WR_BLOG_URL ), esc_js( $nonce ) ); ?>);" name="start" value="<?php esc_attr_e( 'Get Code', 'blogger-to-wordpress-redirection' ); ?>"/></td>
+				<td  width="75px"><input type="submit" class="button" onclick = "generate_code(<?php printf( '\'%1$s\',\'%2$s\',\'%3$s\'', esc_js( $result->meta_value ), esc_js( RT_B2WR_BLOG_URL ), esc_js( $nonce ) ); ?>);" name="start" value="<?php esc_attr_e( 'Get Code', 'blogger-to-wordpress-redirection' ); ?>"/></td>
 			</tr>
 
 			<?php
