@@ -22,7 +22,7 @@ define( 'RT_B2WR_BLOG_URL', get_bloginfo( 'url' ) );
  */
 function rt_blogger_to_wordpress_add_option() {
 
-	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
+	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), 'manage_options', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
 
 	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', ( RT_B2WR_PLUGIN_URL . 'js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), filemtime( RT_B2WR_PLUGIN_DIR . 'js/b2w-redirection-ajax.js' ), true );
 
@@ -39,7 +39,6 @@ function rt_blogger_to_wordpress_add_option() {
 		wp_enqueue_style( 'dashboard' );
 
 	}
-
 }
 
 add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
@@ -50,7 +49,6 @@ add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
 function rt_blogger_to_wordpress_administrative_page() {
 
 	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
-
 }
 
 /**
@@ -75,11 +73,9 @@ function rt_b2wr_get_config() {
 	require_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
 
 	die();
-
 }
 
 add_action( 'wp_ajax_rt_b2wr_get_config', 'rt_b2wr_get_config' );
-
 
 /**
  *  Redirection Function (!important)
@@ -132,7 +128,6 @@ function rt_blogger_to_wordpress_redirection() {
 			exit;
 		}
 	}
-
 }
 
 add_action( 'init', 'rt_blogger_to_wordpress_redirection' );
@@ -169,7 +164,6 @@ function rt_b2wr_verify_config() {
 	require_once RT_B2WR_PLUGIN_DIR . 'templates/verify-config.php';
 
 	die();
-
 }
 
 add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
@@ -189,7 +183,6 @@ function rt_get_feeds_from_blogger_to_wp() {
 	}
 
 	require_once RT_B2WR_PLUGIN_DIR . 'templates/feeds.php';
-
 }
 
 /**
@@ -200,7 +193,6 @@ function rt_blogger_to_wordpress_update_notice() {
 	if ( empty( get_option( 'rtb2wr206' ) ) ) {
 		require_once RT_B2WR_PLUGIN_DIR . 'template/update-notice.php';
 	}
-
 }
 
 /**
@@ -215,7 +207,6 @@ function rt_b2wr_hide_notice_block() {
 	}
 
 	update_option( 'rtb2wr206', 'done' );
-
 }
 
 add_action( 'wp_ajax_rt_b2wr_hide_notice_block', 'rt_b2wr_hide_notice_block' );
