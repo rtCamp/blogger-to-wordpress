@@ -1,0 +1,208 @@
+# Copyright (C) 2024 rtCamp
+# This file is distributed under the same license as the Blogger To WordPress plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blogger To WordPress 2.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blogger-to-wordpress\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-07-23T11:09:06+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: blogger-to-wordpress-redirection\n"
+
+#. Plugin Name of the plugin
+#: b2w-redirection.php
+msgid "Blogger To WordPress"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: b2w-redirection.php
+msgid "https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/"
+msgstr ""
+
+#. Description of the plugin
+#: b2w-redirection.php
+msgid "This plugin is useful for setting up 1-to-1 mapping between Blogger.com blog posts and WordPress blog posts. This works nicely for blogs with old subdomain address (e.g. xyz.blogspot.com) which are moved to new custom domain (e.g. xyz.com)"
+msgstr ""
+
+#. Author of the plugin
+#: b2w-redirection.php
+msgid "rtCamp"
+msgstr ""
+
+#. Author URI of the plugin
+#: b2w-redirection.php
+msgid "https://rtcamp.com/"
+msgstr ""
+
+#: b2w-redirection.php:27
+msgid "Blogger To WordPress Redirection"
+msgstr ""
+
+#: templates/feeds.php:14
+msgid "No Items"
+msgstr ""
+
+#: templates/feeds.php:22
+msgid "Posted"
+msgstr ""
+
+#: templates/get-config.php:14
+msgid "Sorry… No posts found that were imported from a Blogger.com blog"
+msgstr ""
+
+#: templates/get-config.php:17
+msgid "Import from Blogger.com"
+msgstr ""
+
+#: templates/get-config.php:20
+msgid "first and then \"Start Configuration\""
+msgstr ""
+
+#: templates/get-config.php:28
+msgid "List of Blogs"
+msgstr ""
+
+#: templates/get-config.php:34
+msgid "We found posts from following Blogger Blog(s) in your current WordPress installation. Click on <b>Get Code</b> button to generate the redirection code for the chosen Blogger blog<br /><br />"
+msgstr ""
+
+#: templates/get-config.php:57
+msgid "Get Code"
+msgstr ""
+
+#: templates/settings.php:12
+msgid "B2W-Redirection"
+msgstr ""
+
+#: templates/settings.php:13
+msgid "Blogger to WordPress Redirection"
+msgstr ""
+
+#: templates/settings.php:34
+msgid "Please keep this plugin <strong>activated</strong> for redirection to work."
+msgstr ""
+
+#: templates/settings.php:45
+#: templates/settings.php:57
+msgid "Start Configuration"
+msgstr ""
+
+#: templates/settings.php:50
+msgid "Press \"Start Configuration\" button to generate code for Blogger.com blog"
+msgstr ""
+
+#: templates/settings.php:54
+msgid "Plugin will automatically detect Blogger.com blog from where you have imported."
+msgstr ""
+
+#: templates/settings.php:66
+msgid "Click to toggle"
+msgstr ""
+
+#: templates/settings.php:68
+msgid "Getting Social is Good"
+msgstr ""
+
+#: templates/settings.php:71
+msgid "Become a fan on Facebook"
+msgstr ""
+
+#: templates/settings.php:71
+msgid "Twitter"
+msgstr ""
+
+#: templates/settings.php:72
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: templates/settings.php:72
+msgid "Facebook"
+msgstr ""
+
+#: templates/settings.php:73
+msgid "Subscribe to our feeds"
+msgstr ""
+
+#: templates/settings.php:73
+msgid "RSS Feeds"
+msgstr ""
+
+#: templates/settings.php:78
+#: templates/settings.php:88
+#: templates/settings.php:126
+#: templates/settings.php:146
+msgid "Click to Toggle"
+msgstr ""
+
+#: templates/settings.php:80
+msgid "Join Us on Facebook"
+msgstr ""
+
+#: templates/settings.php:90
+msgid "Promote, Donate, Share..."
+msgstr ""
+
+#: templates/settings.php:94
+msgid "A lot of time and effort goes into the development of this plugin. If you find it useful, please consider making a donation, or a review on your blog or sharing this with your friends to help us."
+msgstr ""
+
+#: templates/settings.php:105
+msgid "PayPal - The safer, easier way to pay online!"
+msgstr ""
+
+#: templates/settings.php:116
+msgid "Blogger to WordPress Redirection Plugin"
+msgstr ""
+
+#: templates/settings.php:116
+msgid "Tweet"
+msgstr ""
+
+#: templates/settings.php:128
+msgid "Free Support"
+msgstr ""
+
+#: templates/settings.php:133
+msgid "If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href=\"https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/\" target=\"_blank\" title=\"Blogger to WordPress Support Forum\">support forums</a>."
+msgstr ""
+
+#: templates/settings.php:148
+msgid "Latest News from Our Blog"
+msgstr ""
+
+#: templates/update-notice.php:13
+msgid "Due to recent updates on blogger.com, Blogger to WordPress Redirection plugin has been rewritten. The process has also changed completely. Please refer the updated instructions here:"
+msgstr ""
+
+#: templates/update-notice.php:15
+msgid "Read more details about this update at Our Blog"
+msgstr ""
+
+#: templates/update-notice.php:15
+msgid "(Read More…)"
+msgstr ""
+
+#: templates/update-notice.php:19
+msgid "Hide this message!"
+msgstr ""
+
+#: templates/verify-config.php:11
+msgid "Test Case"
+msgstr ""
+
+#: templates/verify-config.php:14
+msgid "Clicking this link"
+msgstr ""
+
+#: templates/verify-config.php:20
+msgid "Should redirect to"
+msgstr ""
+
+#: templates/verify-config.php:30
+msgid "If you are stuck, you can use our <a href=\"https://bloggertowp.org/tutorials/blogger-to-wordpress-redirection-plugin/\" target=\"_blank\">free support forum</a> or <a href=\"https://bloggertowp.org/contact-us/\" target=\"_blank\">hire us.</a>"
+msgstr ""
