@@ -23,7 +23,7 @@ function rt_start_config( nonce ){
 			type: 'POST',
 			data: 'action=rt_b2wr_get_config&nonce=' + nonce,
 			success: function(result){
-				jQuery( '#get_config' ).append( result );
+				jQuery( '#get_config' ).append( result ); // phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.append
 			}
 		}
 	);
@@ -44,7 +44,7 @@ function generate_code( domain_name, curr_domain, nonce){
 	response = response.replace( /{{curr_domain}}/g, curr_domain );
 	response = response.replace( /{{domain_name}}/g, domain_name );
 	response = response.replace( /{{nonce}}/g, nonce );
-	jQuery( '#code_here' ).html( response );
+	jQuery( '#code_here' ).html( response ); // phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.html
 
 }
 
@@ -68,7 +68,7 @@ function check_configuration( domain_name, nonce ) {
 			type: 'POST',
 			data: 'action=rt_b2wr_verify_config&dname=' + domain_name + '&config_nonce=' + nonce,
 			success: function(result) {
-				jQuery( '#verify_config' ).append( result );
+				jQuery( '#verify_config' ).append( result ); // phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.append
 			}
 		}
 	);
