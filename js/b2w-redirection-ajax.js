@@ -44,7 +44,7 @@ function generate_code( domain_name, curr_domain, nonce){
 
 	if (!originalHtml) {
 		originalHtml = jQuery('#code_here').html();
-        jQuery('#code_here').data('original-html', originalHtml);
+		jQuery('#code_here').data('original-html', originalHtml);
 	}
 
 	let response = originalHtml;
