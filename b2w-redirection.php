@@ -18,11 +18,13 @@ define( 'RT_B2WR_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RT_B2WR_BLOG_URL', get_bloginfo( 'url' ) );
 
 /**
- *  Add option to Tools Menu
+ * Add option to Tools Menu
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_add_option() {
+function rt_blogger_to_wordpress_add_option(): void {
 
-	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), 'administrator', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
+	add_management_page( __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), __( 'Blogger To WordPress Redirection', 'blogger-to-wordpress-redirection' ), 'manage_options', 'rt-blogger-to-wordpress-redirection', 'rt_blogger_to_wordpress_administrative_page' );
 
 	wp_enqueue_script( 'rt-blogger-to-wordpress-redirection-js', ( RT_B2WR_PLUGIN_URL . 'js/b2w-redirection-ajax.js' ), array( 'jquery', 'postbox' ), filemtime( RT_B2WR_PLUGIN_DIR . 'js/b2w-redirection-ajax.js' ), true );
 
@@ -39,32 +41,17 @@ function rt_blogger_to_wordpress_add_option() {
 		wp_enqueue_style( 'dashboard' );
 
 	}
-
 }
 
 add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
 
 /**
  * Administrative Page - Begin
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_administrative_page() {
-
-	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
-
-}
-
-/**
- * Get Configuration, called via AJAX
- */
-function rt_b2wr_get_config() {
-
+function rt_blogger_to_wordpress_administrative_page(): void {
 	global $wpdb;
-
-	if ( ! isset( $_POST['nonce'] )
-	|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'b2w_admin_nonce' )
-	) {
-		return;
-	}
 
 	// get all blogger domains, if avaliable.
 	$sql = "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} where meta_key = 'blogger_blog'";
@@ -72,19 +59,15 @@ function rt_b2wr_get_config() {
 	// unprepared sql ok.
 	$results = $wpdb->get_results( $sql ); //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
 
-	require_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
-
-	die();
-
+	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
 }
 
-add_action( 'wp_ajax_rt_b2wr_get_config', 'rt_b2wr_get_config' );
-
-
 /**
- *  Redirection Function (!important)
+ * Redirection Function (!important)
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_redirection() {
+function rt_blogger_to_wordpress_redirection(): void {
 
 	global $wpdb;
 
@@ -125,19 +108,21 @@ function rt_blogger_to_wordpress_redirection() {
 
 			// wp redirect ok.
 			wp_redirect( get_permalink( $wpurl[0][0] ) ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
-
 			exit;
 		}
 	}
 	wp_safe_redirect( home_url(), 301 );
+	exit();
 }
 
 add_action( 'init', 'rt_blogger_to_wordpress_redirection' );
 
 /**
- *  Verify Configuration
+ * Verify Configuration
+ *
+ * @return void
  */
-function rt_b2wr_verify_config() {
+function rt_b2wr_verify_config(): void {
 
 	global $wpdb;
 
@@ -163,18 +148,24 @@ function rt_b2wr_verify_config() {
 	$blogger_url = 'https://' . $domain_name . $rand_col2[0]->meta_value;
 	$local_url   = get_permalink( $rand_post_id );
 
-	require_once RT_B2WR_PLUGIN_DIR . 'templates/verify-config.php';
-
+	echo wp_json_encode(
+		array(
+			'blogger_url' => esc_url( $blogger_url ),
+			'local_url'   => esc_url( $local_url ),
+		)
+	);
+	
 	die();
-
 }
 
 add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
 
 /**
  * Get Latest Feeds - Begin
+ *
+ * @return void
  */
-function rt_get_feeds_from_blogger_to_wp() {
+function rt_get_feeds_from_blogger_to_wp(): void {
 
 	require_once ABSPATH . WPINC . '/feed.php';
 
@@ -186,24 +177,26 @@ function rt_get_feeds_from_blogger_to_wp() {
 	}
 
 	require_once RT_B2WR_PLUGIN_DIR . 'templates/feeds.php';
-
 }
 
 /**
  * Update Notice - Begin
+ *
+ * @return void
  */
-function rt_blogger_to_wordpress_update_notice() {
+function rt_blogger_to_wordpress_update_notice(): void {
 
 	if ( empty( get_option( 'rtb2wr206' ) ) ) {
 		require_once RT_B2WR_PLUGIN_DIR . 'template/update-notice.php';
 	}
-
 }
 
 /**
  * Hide Notice block
+ *
+ * @return void
  */
-function rt_b2wr_hide_notice_block() {
+function rt_b2wr_hide_notice_block(): void {
 
 	if ( ! isset( $_POST['update_nonce'] )
 	|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['update_nonce'] ) ), 'b2w_update_nonce' )
@@ -212,7 +205,6 @@ function rt_b2wr_hide_notice_block() {
 	}
 
 	update_option( 'rtb2wr206', 'done' );
-
 }
 
 add_action( 'wp_ajax_rt_b2wr_hide_notice_block', 'rt_b2wr_hide_notice_block' );
