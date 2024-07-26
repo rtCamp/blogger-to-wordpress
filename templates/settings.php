@@ -54,9 +54,13 @@
 			<?php esc_html_e( 'Plugin will automatically detect Blogger.com blog from where you have imported.', 'blogger-to-wordpress-redirection' ); ?>
 		</p>
 
-		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress-redirection' ); ?>" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
+		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress-redirection' ); ?>" onclick="rt_start_config()" />
 
-		<p id="get_config" class="clear"></p>
+		<div id="get_config" class="clear" hidden>
+			<?php
+				require_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
+			?>
+		</div>
 	</div>
 
 	<div id="ads_block" class="metabox-holder align_left">

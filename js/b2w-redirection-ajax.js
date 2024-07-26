@@ -7,27 +7,12 @@
 /**
  * Gets configuration and appends to dom.
  *
- * @param {String} nonce
- *
  * @returns {void}
  */
-function rt_start_config( nonce ){
-
-	if ( jQuery( '#get_config' ).html() != '' ) {
-		jQuery( '#get_config' ).html( '' );
-	}
-
-	jQuery.ajax(
-		{
-			url:'admin-ajax.php',
-			type: 'POST',
-			data: 'action=rt_b2wr_get_config&nonce=' + nonce,
-			success: function(result){
-				jQuery( '#get_config' ).append( result ); // phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.append
-			}
-		}
-	);
+function rt_start_config(){
+	jQuery( '#get_config' ).show();
 }
+
 /**
  * Generates blogger code
  *
@@ -38,21 +23,15 @@ function rt_start_config( nonce ){
  * @returns {void}
  */
 function generate_code( domain_name, curr_domain, nonce){
-
+	let blogger_code = jQuery( '#blogger-code-textarea' ).val();
+	blogger_code = blogger_code.replace( /{{curr_domain}}/g, curr_domain );
+	jQuery( '#blogger-code-textarea' ).val( blogger_code );
+	jQuery( '#redirection-domain-name-1' ).attr( 'href', domain_name );
+	jQuery( '#redirection-domain-name-1' ).text( domain_name );
+	jQuery( '#redirection-domain-name-2' ).text( domain_name );
+	jQuery( '#check_config' ).attr( 'onClick', 'check_configuration("' + domain_name + '","' + nonce + '")' );
 	jQuery( '#code_here' ).show();
-	let originalHtml = jQuery('#code_here').data('original-html');
-
-	if (!originalHtml) {
-		originalHtml = jQuery('#code_here').html();
-		jQuery('#code_here').data('original-html', originalHtml);
-	}
-
-	let response = originalHtml;
-	response = response.replace( /{{curr_domain}}/g, curr_domain );
-	response = response.replace( /{{domain_name}}/g, domain_name );
-	response = response.replace( /{{nonce}}/g, nonce );
-	jQuery( '#code_here' ).html( response ); // phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.html
-
+	jQuery( '#verify_config' ).hide();
 }
 
 /**
@@ -64,18 +43,18 @@ function generate_code( domain_name, curr_domain, nonce){
  * @returns {void}
  */
 function check_configuration( domain_name, nonce ) {
-
-	if ( jQuery( '#verify_config' ).html() != '' ) {
-		jQuery( '#verify_config' ).html( '' );
-	}
-
 	jQuery.ajax(
 		{
 			url:'admin-ajax.php',
 			type: 'POST',
 			data: 'action=rt_b2wr_verify_config&dname=' + domain_name + '&config_nonce=' + nonce,
 			success: function(result) {
-				jQuery( '#verify_config' ).append( result ); // phpcs:ignore WordPressVIPMinimum.JS.HTMLExecutingFunctions.append
+				const { blogger_url, local_url } = JSON.parse(result);
+				jQuery( '#blogger_url' ).attr( 'href', blogger_url );
+				jQuery( '#local_url' ).attr( 'href', local_url );
+				jQuery( '#blogger_url' ).text( blogger_url );
+				jQuery( '#local_url' ).text( local_url );
+				jQuery( '#verify_config' ).show();
 			}
 		}
 	);

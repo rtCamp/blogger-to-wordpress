@@ -14,13 +14,13 @@
 	<?php esc_html_e( 'Clicking this link', 'blogger-to-wordpress-redirection' ); ?>
 	&raquo;
 	<b>
-		<a href="<?php echo esc_url( $blogger_url ); ?>" target="_blank"><?php echo esc_url( $blogger_url ); ?></a>
+		<a id="blogger_url" href="" target="_blank"></a>
 	</b>
 	<br/>
 	<?php esc_html_e( 'Should redirect to', 'blogger-to-wordpress-redirection' ); ?>
 	&raquo;
 	<b>
-		<a href="<?php echo esc_url( $local_url ); ?>" target="_blank"><?php echo esc_url( $local_url ); ?></a>
+		<a id="local_url" href="" target="_blank"></a>
 	</b>
 </pre>
 <p>

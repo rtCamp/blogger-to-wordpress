@@ -51,24 +51,7 @@ add_action( 'admin_menu', 'rt_blogger_to_wordpress_add_option' );
  * @return void
  */
 function rt_blogger_to_wordpress_administrative_page(): void {
-
-	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
-}
-
-/**
- * Get Configuration, called via AJAX
- *
- * @return void
- */
-function rt_b2wr_get_config(): void {
-
 	global $wpdb;
-
-	if ( ! isset( $_POST['nonce'] )
-	|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'b2w_admin_nonce' )
-	) {
-		return;
-	}
 
 	// get all blogger domains, if avaliable.
 	$sql = "SELECT DISTINCT meta_value FROM {$wpdb->postmeta} where meta_key = 'blogger_blog'";
@@ -76,12 +59,8 @@ function rt_b2wr_get_config(): void {
 	// unprepared sql ok.
 	$results = $wpdb->get_results( $sql ); //phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.DirectDatabaseQuery.NoCaching
 
-	require_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
-
-	die();
+	require_once RT_B2WR_PLUGIN_DIR . 'templates/settings.php';
 }
-
-add_action( 'wp_ajax_rt_b2wr_get_config', 'rt_b2wr_get_config' );
 
 /**
  * Redirection Function (!important)
@@ -129,11 +108,11 @@ function rt_blogger_to_wordpress_redirection(): void {
 
 			// wp redirect ok.
 			wp_redirect( get_permalink( $wpurl[0][0] ) ); // phpcs:ignore WordPress.Security.SafeRedirect.wp_redirect_wp_redirect
-
 			exit;
 		}
 	}
 	wp_safe_redirect( home_url(), 301 );
+	exit();
 }
 
 add_action( 'init', 'rt_blogger_to_wordpress_redirection' );
@@ -169,8 +148,13 @@ function rt_b2wr_verify_config(): void {
 	$blogger_url = 'https://' . $domain_name . $rand_col2[0]->meta_value;
 	$local_url   = get_permalink( $rand_post_id );
 
-	require_once RT_B2WR_PLUGIN_DIR . 'templates/verify-config.php';
-
+	echo wp_json_encode(
+		array(
+			'blogger_url' => esc_url( $blogger_url ),
+			'local_url'   => esc_url( $local_url ),
+		)
+	);
+	
 	die();
 }
 

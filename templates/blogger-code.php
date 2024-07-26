@@ -13,7 +13,7 @@
 	<u>Generated Code</u>
 </h3>
 
-<strong>Redirection code for <a href="//{{domain_name}}">{{domain_name}}</a></strong>
+<strong>Redirection code for <a id="redirection-domain-name-1" href=""></a></strong>
 
 <br/>
 
@@ -25,7 +25,7 @@ Copy template code generated below and paste them in your Blogger.com template. 
 
 <p>
 
-	<textarea onclick="this.select()" cols="55" rows="12">
+	<textarea id="blogger-code-textarea" onclick="this.select()" cols="55" rows="12">
 		<!DOCTYPE HTML>
 
 		<html b:render='false' b:version='2' class='v2' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
@@ -117,12 +117,16 @@ Copy template code generated below and paste them in your Blogger.com template. 
 
 </p>
 
-After the redirection setup press <b>Verify Configuration</b> button below to test your configuration. <br />When you press the button it will generate a random link for a post on <b>{{domain_name}}</b>
+After the redirection setup press <b>Verify Configuration</b> button below to test your configuration. <br />When you press the button it will generate a random link for a post on <b id="redirection-domain-name-2"></b>
 
 <div class="submit" style="padding-bottom: 0.5em !important">
 
-	<input type="submit" class="button-primary" onclick = "check_configuration( '{{domain_name}}', '{{nonce}}' )" name="start" id ="check_config" value="Verify Configuration"/><br />
+	<input type="submit" class="button-primary" onclick = "" name="start" id ="check_config" value="Verify Configuration"/><br />
 
 </div>
 
-<div id ="verify_config"></div>
+<div id ="verify_config" hidden>
+	<?php 
+		require_once RT_B2WR_PLUGIN_DIR . 'templates/verify-config.php';
+	?>
+</div>
