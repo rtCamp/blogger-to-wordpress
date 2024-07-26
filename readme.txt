@@ -2,7 +2,7 @@
 Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri, deepaklalwani, vaishu.agola27, nikhiljoshua
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 6.3
+Tested up to: 6.6
 Stable tag: 2.3.0
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
