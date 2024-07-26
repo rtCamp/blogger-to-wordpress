@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-23T11:09:06+00:00\n"
+"POT-Creation-Date: 2024-07-26T09:06:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: blogger-to-wordpress-redirection\n"
@@ -41,6 +41,47 @@ msgstr ""
 
 #: b2w-redirection.php:27
 msgid "Blogger To WordPress Redirection"
+msgstr ""
+
+#: templates/blogger-code.php:13
+msgid "Generated Code"
+msgstr ""
+
+#: templates/blogger-code.php:16
+msgid "Redirection code for"
+msgstr ""
+
+#: templates/blogger-code.php:20
+msgid "Copy template code generated below and paste them in your Blogger.com template."
+msgstr ""
+
+#: templates/blogger-code.php:20
+msgid "How to do this?"
+msgstr ""
+
+#: templates/blogger-code.php:23
+msgid "Important:"
+msgstr ""
+
+#: templates/blogger-code.php:23
+msgid "Do NOT forget to take a backup of old template code."
+msgstr ""
+
+#: templates/blogger-code.php:120
+msgid "After the redirection setup press"
+msgstr ""
+
+#: templates/blogger-code.php:120
+#: templates/blogger-code.php:124
+msgid "Verify Configuration"
+msgstr ""
+
+#: templates/blogger-code.php:120
+msgid "button below to test your configuration."
+msgstr ""
+
+#: templates/blogger-code.php:120
+msgid "When you press the button it will generate a random link for a post on"
 msgstr ""
 
 #: templates/feeds.php:14
@@ -100,78 +141,78 @@ msgstr ""
 msgid "Plugin will automatically detect Blogger.com blog from where you have imported."
 msgstr ""
 
-#: templates/settings.php:66
+#: templates/settings.php:70
 msgid "Click to toggle"
 msgstr ""
 
-#: templates/settings.php:68
+#: templates/settings.php:72
 msgid "Getting Social is Good"
 msgstr ""
 
-#: templates/settings.php:71
+#: templates/settings.php:75
 msgid "Become a fan on Facebook"
 msgstr ""
 
-#: templates/settings.php:71
+#: templates/settings.php:75
 msgid "Twitter"
 msgstr ""
 
-#: templates/settings.php:72
+#: templates/settings.php:76
 msgid "Follow us on Twitter"
 msgstr ""
 
-#: templates/settings.php:72
+#: templates/settings.php:76
 msgid "Facebook"
 msgstr ""
 
-#: templates/settings.php:73
+#: templates/settings.php:77
 msgid "Subscribe to our feeds"
 msgstr ""
 
-#: templates/settings.php:73
+#: templates/settings.php:77
 msgid "RSS Feeds"
 msgstr ""
 
-#: templates/settings.php:78
-#: templates/settings.php:88
-#: templates/settings.php:126
-#: templates/settings.php:146
+#: templates/settings.php:82
+#: templates/settings.php:92
+#: templates/settings.php:130
+#: templates/settings.php:150
 msgid "Click to Toggle"
 msgstr ""
 
-#: templates/settings.php:80
+#: templates/settings.php:84
 msgid "Join Us on Facebook"
 msgstr ""
 
-#: templates/settings.php:90
+#: templates/settings.php:94
 msgid "Promote, Donate, Share..."
 msgstr ""
 
-#: templates/settings.php:94
+#: templates/settings.php:98
 msgid "A lot of time and effort goes into the development of this plugin. If you find it useful, please consider making a donation, or a review on your blog or sharing this with your friends to help us."
 msgstr ""
 
-#: templates/settings.php:105
+#: templates/settings.php:109
 msgid "PayPal - The safer, easier way to pay online!"
 msgstr ""
 
-#: templates/settings.php:116
+#: templates/settings.php:120
 msgid "Blogger to WordPress Redirection Plugin"
 msgstr ""
 
-#: templates/settings.php:116
+#: templates/settings.php:120
 msgid "Tweet"
 msgstr ""
 
-#: templates/settings.php:128
+#: templates/settings.php:132
 msgid "Free Support"
 msgstr ""
 
-#: templates/settings.php:133
+#: templates/settings.php:137
 msgid "If you have any problems with this plugin or good ideas for improvements, please talk about them in the <a href=\"https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/\" target=\"_blank\" title=\"Blogger to WordPress Support Forum\">support forums</a>."
 msgstr ""
 
-#: templates/settings.php:148
+#: templates/settings.php:152
 msgid "Latest News from Our Blog"
 msgstr ""
 
