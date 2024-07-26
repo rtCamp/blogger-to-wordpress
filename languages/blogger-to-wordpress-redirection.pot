@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Blogger To WordPress plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Blogger To WordPress 2.3.0\n"
+"Project-Id-Version: Blogger To WordPress 2.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/blogger-to-wordpress\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
