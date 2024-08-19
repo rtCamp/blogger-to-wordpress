@@ -2,7 +2,7 @@
 
 ![Blogger to WordPress Redirection](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
 
-* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/), [Pavan Patil](https://profiles.wordpress.org/pavanpatil1/)
+* **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/), [Pavan Patil](https://profiles.wordpress.org/pavanpatil1/), [Devansh Chaudhary](https://profiles.wordpress.org/devansh2002/)
 
 * **License:** [GPL v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -46,6 +46,13 @@ If you have used any other way to import your posts from Blogger.com, this plugi
 Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/) for some help.
 
 ## Changelog
+
+### 2.3.1
+
+* Compatible with PHP 8.3 compatibility.
+* Compatible with WordPress 6.6
+* Compatible with WordPress VIP.
+* Fix redirection issue when using for multiple blogs.
 
 ### 2.3.0
 
@@ -102,6 +109,13 @@ New features added:
 * Supports rel=canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
 ## Upgrade Notice
+
+### 2.3.1
+
+* Compatible with PHP 8.3 compatibility.
+* Compatible with WordPress 6.6
+* Compatible with WordPress VIP.
+* Fix redirection issue when using for multiple blogs.
 
 ### 2.3.0
 

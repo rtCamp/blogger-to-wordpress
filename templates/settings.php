@@ -10,7 +10,7 @@
 
 	<div>
 		<img id="btowp_img" alt="<?php esc_attr_e( 'B2W-Redirection', 'blogger-to-wordpress-redirection' ); ?>" src="<?php echo esc_url( RT_B2WR_PLUGIN_URL ); ?>images/btowp_img.png" />
-		<h1 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wp' ); ?></h1>
+		<h1 id="btowp_h2"><?php esc_html_e( 'Blogger to WordPress Redirection', 'blogger-to-wordpress-redirection' ); ?></h1>
 	</div>
 
 	<div class="clear"></div>
@@ -54,9 +54,13 @@
 			<?php esc_html_e( 'Plugin will automatically detect Blogger.com blog from where you have imported.', 'blogger-to-wordpress-redirection' ); ?>
 		</p>
 
-		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress-redirection' ); ?>" onclick="rt_start_config('<?php echo esc_js( wp_create_nonce( 'b2w_admin_nonce' ) ); ?>')" />
+		<input type="submit" class="button-primary" name="start" id ="start_config" value="<?php esc_attr_e( 'Start Configuration', 'blogger-to-wordpress-redirection' ); ?>" onclick="rt_start_config()" />
 
-		<p id="get_config" class="clear"></p>
+		<div id="get_config" class="clear" hidden>
+			<?php
+				require_once RT_B2WR_PLUGIN_DIR . 'templates/get-config.php';
+			?>
+		</div>
 	</div>
 
 	<div id="ads_block" class="metabox-holder align_left">
