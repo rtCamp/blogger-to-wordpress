@@ -6,25 +6,13 @@ Used Framewrok
 
 ## Install
 `npm install`
-
-`npm run build`
-
+`npx playwright install`
 
 
 ## Run all available tests.
-`npm run test-e2e:playwright`
+`npx playwright test`
 
-## Run in headed mode.`
-`npm run test-e2e:playwright -- --headed`
 
-## Run a single test file.
-`npm run test-e2e:playwright -- <path_to_test_file> # E.g., npm run test-e2e:playwright -- add-new-post.spec.js`
-
-## Debugging
-`npm run test-e2e:playwright -- --debug`
-
-## Migration
-We can migrate wp-e2e generic test cases from [here](https://github.com/rtCamp/wp-e2e/tree/master/specs) using the steps mentioned in [this](https://github.com/WordPress/gutenberg/pull/38570)
 
 
 

@@ -21,6 +21,9 @@ jobs:
       COMMIT_SHA: ${{ github.sha }}
       PR_NUMBER: ${{ github.event.pull_request.number }}
       working-directory: ./tests/e2e-playwright
+      WP_USERNAME: automation
+      WP_PASSWORD: automation
+      WP_BASE_URL: http://blogger-to-wordpress.com/
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:

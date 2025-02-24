@@ -5,6 +5,8 @@
  import { fileURLToPath } from 'url';
  import { devices } from '@playwright/test';
  import type { PlaywrightTestConfig } from '@playwright/test';
+
+require("dotenv").config();
  
  const STORAGE_STATE_PATH =
      process.env.STORAGE_STATE_PATH ||
@@ -28,11 +30,11 @@
      timeout: parseInt( process.env.TIMEOUT || '', 10 ) || 100_000, // Defaults to 100 seconds.
      // Don't report slow test "files", as we will be running our tests in serial.
      reportSlowTests: null,
-     testDir: fileURLToPath( new URL( './specs', 'file:' + __filename ).href ),
-     outputDir: path.join( process.cwd(), 'artifacts/test-results' ),
+     testDir: fileURLToPath(new URL("./specs", "file:" + __filename).href),
      globalSetup: fileURLToPath(
-         new URL( './config/global-setup.ts', 'file:' + __filename ).href
+       new URL("./config/global-setup.ts", "file:" + __filename).href
      ),
+     outputDir: path.join( process.cwd(), 'artifacts/test-results' ),
      use: {
          baseURL: 'http://blogger-to-wordpress.com/', 
          headless: true,
