@@ -20,7 +20,7 @@ if ( empty( $results ) ) {
 	<?php esc_html_e( 'first and then "Start Configuration"', 'blogger-to-wordpress-redirection' ); ?>
 
 	<?php
-	die();
+	return;
 }
 ?>
 	<br/>

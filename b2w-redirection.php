@@ -154,8 +154,8 @@ function rt_b2wr_verify_config(): void {
 			'local_url'   => esc_url( $local_url ),
 		)
 	);
-	
-	die();
+
+	return;
 }
 
 add_action( 'wp_ajax_rt_b2wr_verify_config', 'rt_b2wr_verify_config' );
