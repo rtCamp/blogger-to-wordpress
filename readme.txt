@@ -2,8 +2,8 @@
 Contributors: rtcamp, rahul286, nitun.lanjewar, rakshit, saurabhshukla, faishal, anantshri, deepaklalwani, vaishu.agola27, nikhiljoshua, devansh2002
 Tags: Wordpress, Blogger, Traffic, Redirection, Blogspot, Permalink, SEO, rel-canonical, meta-refresh
 Requires at least: 3.2
-Tested up to: 6.6
-Stable tag: 2.3.1
+Tested up to: 6.8
+Stable tag: 2.3.2
 License: GPLv2 or later (of-course)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,11 @@ If you have used any other way to import your posts from Blogger.com, this plugi
 Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/) for some help.
 
 == Changelog ==
+
+= 2.3.2 =
+
+* Compatible with WordPress 6.8
+* Fix Javascript not loading issue.
 
 = 2.3.1 =
 

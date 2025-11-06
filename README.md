@@ -51,6 +51,11 @@ Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-re
 
 ## Changelog
 
+### 2.3.2
+
+* Compatible with WordPress 6.8
+* Fix Javascript not loading issue.
+
 ### 2.3.1
 
 * Compatible with PHP 8.3 compatibility.
@@ -113,6 +118,11 @@ New features added:
 * Supports rel=canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
 ## Upgrade Notice
+
+### 2.3.2
+
+* Compatible with WordPress 6.8
+* Fix Javascript not loading issue.
 
 ### 2.3.1
 
