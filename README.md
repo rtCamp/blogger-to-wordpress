@@ -1,12 +1,16 @@
 # Blogger To WordPress
 
-![Blogger to WordPress Redirection](https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg)
+This plugin automates setting up 1-to-1 mapping between Blogger.com (blogspot) blog posts and your new WordPress blog posts.
+
+<a href="https://rtcamp.com/?utm_source=github&utm_medium=readme" rel="nofollow"><img src="https://rtcamp.com/wp-content/uploads/sites/2/2019/04/github-banner@2x.png" alt="Handcrafted Enterprise WordPress Solutions by rtCamp" /></a>
+
+<p align="center">
+    <img src="https://plugins.svn.wordpress.org/blogger-to-wordpress-redirection/assets/banner-772x250.jpg" alt="Blogger to WordPress Redirection">
+</p>
 
 * **Contributors:** [rtcamp](http://profiles.wordpress.org/rtcamp), [rahul286](http://profiles.wordpress.org/rahul286), [nitun.lanjewar](http://profiles.wordpress.org/nitun.lanjewar), [rakshit](http://profiles.wordpress.org/rakshit), [saurabhshukla](http://profiles.wordpress.org/saurabhshukla), [faishal](http://profiles.wordpress.org/faishal), [anantshri](http://profiles.wordpress.org/anantshri), [deepaklalwani](https://profiles.wordpress.org/deepaklalwani/), [vaishu.agola27](https://profiles.wordpress.org/vaishuagola27/), [Nikhil Joshua](https://profiles.wordpress.org/nikhiljoshua/), [Pavan Patil](https://profiles.wordpress.org/pavanpatil1/), [Devansh Chaudhary](https://profiles.wordpress.org/devansh2002/)
 
 * **License:** [GPL v2 or later](http://www.gnu.org/licenses/gpl-2.0.html)
-
-This plugin automates setting up 1-to-1 mapping between Blogger.com (blogspot) blog posts and your new WordPress blog posts.
 
 ## Description
 
@@ -46,6 +50,11 @@ If you have used any other way to import your posts from Blogger.com, this plugi
 Use [support forum](https://wordpress.org/support/plugin/blogger-to-wordpress-redirection/) for some help.
 
 ## Changelog
+
+### 2.3.2
+
+* Compatible with WordPress 6.8
+* Fix Javascript not loading issue.
 
 ### 2.3.1
 
@@ -109,6 +118,11 @@ New features added:
 * Supports rel=canonical, meta-refresh tags on Blogger.com which will speed-up redirection
 
 ## Upgrade Notice
+
+### 2.3.2
+
+* Compatible with WordPress 6.8
+* Fix Javascript not loading issue.
 
 ### 2.3.1
 
